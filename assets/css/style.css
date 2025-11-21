@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Great+Vibes&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-fondo: #ffefdf;
+  --color-titulo: #a8886a;
+  --color-texto: #1a1b1f;
+  --color-pastel: #ffb6b9;
+  --color-pastel-hover: #e8a7aa;
+  --shadow-suave: 0 3px 10px rgba(0,0,0,0.08);
+  --shadow-hover: 0 5px 20px rgba(0,0,0,0.15);
+  --trans-rapida: 0.3s ease;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: 'Raleway', sans-serif;
+  color: var(--color-texto);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 6px;
+  transition: transform .4s ease, box-shadow .3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+.logo img,
+.hero-image img {
+  border-radius: 0;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--color-titulo);
+  font-weight: 700;
+}
+
+h1 { font-size: 42px; animation: fadeInDown .7s ease forwards; }
+h2 { font-size: 34px; }
+h3 { font-size: 26px; }
+h4 { font-size: 20px; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section, article, .card {
+  animation: fadeIn .6s ease forwards;
+}
+
+/* ===========================================================
+   HEADER
+=========================================================== */
+.site-header {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: #fff7f2;
+  position: relative;
+}
+
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.site-header .logo h1 {
+  font-size: 32px;
+}
+
+/* ===========================================================
+   NAV DESKTOP
+=========================================================== */
+.main-nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--color-texto);
+  transition: color var(--trans-rapida);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--color-titulo);
+}
+
+/* ===========================================================
+   MENÚ HAMBURGUESA RESPONSIVE (FINAL y SIN DUPLICADOS)
+=========================================================== */
+
+.nav-toggle {
+  display: none;
+}
+
+/* Ícono hamburguesa */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 20px;  /* <-- ALINEADO A LA DERECHA */
+  top: 22px;
+  z-index: 999;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  background: var(--color-texto);
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.hamburger span::before {
+  transform: translateY(-10px);
+}
+
+.hamburger span::after {
+  transform: translateY(6px);
+}
+
+/* Animación al abrir */
+.nav-toggle:checked + .hamburger span {
+  background: transparent;
+}
+
+.nav-toggle:checked + .hamburger span::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.nav-toggle:checked + .hamburger span::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* MENÚ ES DESPLEGABLE EN RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .main-nav ul {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 60%;
+    background: #fff7f2;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: var(--shadow-hover);
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+  }
+
+  /* Mostrar menú cuando se activa */
+  .nav-toggle:checked ~ header .main-nav ul {
+    transform: translateX(0);
+  }
+}
+
+/* ===========================================================
+   BOTONES Y TARJETAS
+=========================================================== */
+.btn-pastel,
+button,
+input[type="submit"],
+.footer-subscribe .newsletter button {
+  background-color: var(--color-pastel) !important;
+  color: #2b190f;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color var(--trans-rapida), transform .2s ease;
+}
+
+.btn-pastel:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--color-pastel-hover) !important;
+  transform: translateY(-2px);
+}
+
+/* Tarjetas */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--shadow-suave);
+  transition: transform var(--trans-rapida), box-shadow var(--trans-rapida);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-title {
+  font-size: 24px;
+  color: var(--color-titulo);
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+/* Fondos secciones */
+.seccion-productos,
+.seccion-recetas,
+.productos-destacados,
+.posts {
+  background-color: #f2d6cc;
+  padding: 40px 0;
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #2b190f;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.footer-logo img {
+  width: 55px;
+}
+
+.footer-description,
+.footer-contact {
+  color: #f6e8df;
+}
+
+.social-list {
+  list-style: none;
+}
+
+.social-list li a {
+  color: #fff;
+  transition: color var(--trans-rapida);
+}
+
+.social-list li a:hover {
+  color: var(--color-pastel);
+}
+
+.footer-bottom {
+  background-color: #1a1b1f;
+  padding: 10px 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer-brand,
+  .footer-subscribe,
+  .footer-social {
+    text-align: center;
+  }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romina Bakery — Sobre nosotros</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&family=Anton&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<label for="nav-toggle" class="hamburger">
+    <span></span>
+</label>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center text-decoration-none" aria-label="Inicio Romina Bakery">
+        <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="64" height="64">
+        <h1 class="ms-2">Romina Bakery</h1>
+      </a>
+
+      <nav class="main-nav" aria-label="Menu principal">
+        <ul class="d-flex list-unstyled mb-0">
+          <li class="me-3"><a href="../index.html">Inicio</a></li>
+          <li class="me-3"><a href="productos.html">Productos</a></li>
+          <li class="me-3"><a href="blog.html">Blog</a></li>
+          <li class="me-3"><a href="sobre_mi.html" class="active">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ABOUT INTRO SECTION -->
+    <section class="about-intro py-5">
+      <div class="container">
+        <div class="row align-items-center about-intro-inner">
+
+          <!-- Texto -->
+          <div class="col-lg-6 mb-4 mb-lg-0 about-text">
+            <h2 class="h2">Sobre Romina Bakery</h2>
+            <p>
+              Romina Bakery nace de la pasión por la repostería casera y los sabores tradicionales.
+              Nos especializamos en pasteles personalizados, cupcakes y postres para todo tipo de
+              celebraciones. Trabajamos con ingredientes de calidad y atención al detalle.
+            </p>
+          </div>
+
+          <!-- Imagen -->
+          <div class="col-lg-6 about-image">
+            <img src="../assets/img/sobre-nosotros-dos.jpg" class="img-fluid rounded shadow" alt="Imagen de la pastelería" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY SECTION -->
+    <section class="about-story py-5">
+      <div class="container">
+        <div class="row align-items-center about-story-inner">
+
+          <!-- Imagen izquierda -->
+          <div class="col-lg-6 mb-4 mb-lg-0 about-kitchen">
+            <img src="../assets/img/sobre-nosotros-tres.jpg" class="img-fluid rounded shadow" alt="Cocina Romina Bakery" loading="lazy">
+          </div>
+
+          <!-- Texto derecha -->
+          <div class="col-lg-6 about-history">
+            <h3 class="h3">Nuestra historia</h3>
+            <p>
+              Empezamos como un pequeño proyecto familiar y hoy atendemos pedidos para fiestas y eventos.
+              Cada receta se prueba y mejora hasta lograr la textura y el sabor que nos identifica.
+              Además ofrecemos asesoría para diseños personalizados según tu celebración.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestro equipo</h2>
+
+        <!-- Grid responsiva 1–2–3 -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 team-grid">
+
+          <!-- Miembro 1 -->
+          <article class="col team-member text-center">
+            <div class="team-photo mb-3">
+              <img src="../assets/img/pastelera-uno.jpg" class="img-fluid rounded-circle shadow" alt="Pastelera Ana" loading="lazy">
+            </div>
+            <h4 class="h5">Ana Gómez</h4>
+            <p class="role fw-bold text-muted">Pastelera principal</p>
+            <p class="bio">
+              Ana crea los diseños de pasteles personalizados y supervisa la calidad de cada pedido.
+            </p>
+          </article>
+
+          <!-- Miembro 2 -->
+          <article class="col team-member text-center">
+            <div class="team-photo mb-3">
+              <img src="../assets/img/pastelera-dos.jpg" class="img-fluid rounded-circle shadow" alt="Pastelera Laura" loading="lazy">
+            </div>
+            <h4 class="h5">Laura Pérez</h4>
+            <p class="role fw-bold text-muted">Decoradora</p>
+            <p class="bio">
+              Laura es experta en técnicas de glaseado y decoración para todo tipo de eventos.
+            </p>
+          </article>
+
+          <!-- Miembro 3 -->
+          <article class="col team-member text-center">
+            <div class="team-photo mb-3">
+              <img src="../assets/img/pastelera-tres.jpg" class="img-fluid rounded-circle shadow" alt="Pastelera Marta" loading="lazy">
+            </div>
+            <h4 class="h5">Marta Ruiz</h4>
+            <p class="role fw-bold text-muted">Chef de recetas</p>
+            <p class="bio">
+              Marta se encarga de las recetas y la investigación de sabores nuevos y tradicionales.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5" role="contentinfo">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-4">
+
+      <!-- Marca -->
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo d-flex align-items-center text-decoration-none">
+          <img src="../assets/img/logo-postre.png" alt="Logotipo Romina Bakery" width="48" height="48">
+          <span class="ms-2">Romina Bakery</span>
+        </a>
+        <p class="footer-description mt-2">
+          Pastelería artesanal en tu ciudad. Tartas, cupcakes y pedidos personalizados.
+        </p>
+        <p class="footer-contact">
+          <strong>Tel:</strong> 312 000 0000 · <strong>Email:</strong> pedidos@rominabakery.com
+        </p>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-subscribe">
+        <form action="#" class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
+          <input id="email-news" type="email" class="form-control" placeholder="Tu correo" required>
+          <button type="submit" class="btn btn-pastel">Suscribirse</button>
+        </form>
+      </div>
+
+      <!-- Redes -->
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <ul class="list-unstyled">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom text-center mt-4 py-3">
+      <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
