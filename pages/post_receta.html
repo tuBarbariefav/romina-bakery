@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Receta: Pastel clásico — Romina Bakery</title>
+  <meta name="description" content="Receta paso a paso: Pastel clásico. Ingredientes, tiempo, pasos y consejos de Romina Bakery." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&family=Anton&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (igual que en el resto) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tu CSS principal (ruta CORREGIDA para estar en /pages/) -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Menú hamburguesa (mismo toggle que en el resto) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+  <label for="nav-toggle" class="hamburger" aria-label="Abrir menú"><span></span></label>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- logo: vuelve a la raíz -->
+      <a href="../index.html" class="logo d-flex align-items-center text-decoration-none" aria-label="Ir a inicio">
+        <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="64" height="64">
+        <h1 class="ms-2">Romina Bakery</h1>
+      </a>
+
+      <!-- NAV: rutas relativas dentro de pages/ -->
+      <nav class="main-nav" role="navigation" aria-label="Menú principal">
+        <ul class="d-flex list-unstyled mb-0">
+          <li class="me-3"><a href="../index.html">Inicio</a></li>
+          <li class="me-3"><a href="productos.html">Productos</a></li>
+          <li class="me-3"><a href="blog.html" class="active">Blog</a></li>
+          <li class="me-3"><a href="sobre_mi.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main role="main">
+
+    <!-- Hero reducido para la entrada (imagen y título) -->
+    <section class="hero post-hero position-relative" aria-label="Encabezado receta">
+      <!-- hero-bg: fondo con blur -->
+      <div class="hero-bg" aria-hidden="true"
+          style="background-image: url('../assets/img/pastel-tres.jpg'); filter: blur(4px) brightness(.75); background-size:cover; background-position:center; position:absolute; inset:0;"></div>
+
+      <div class="container hero-inner" style="position:relative; z-index:2; padding:80px 0;">
+        <div class="hero-content text-center">
+          <h1 class="hero-heading" style="color:var(--color-titulo);">Receta: Pastel clásico</h1>
+          <p class="hero-copy mb-3" style="color:var(--color-texto); opacity:.95; max-width:850px; margin: 0 auto;">
+            Un clásico irresistible: bizcocho esponjoso, capa de crema y decoración sencilla.
+            Aquí tienes los ingredientes, pasos y trucos para lograrlo en casa.
+          </p>
+          <a href="contacto.html" class="btn btn-pastel hero-cta mt-3">Reservar este estilo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="post-content py-5">
+      <div class="container">
+        <div class="row gx-5">
+
+          <!-- COLUMNA IZQUIERDA: ARTÍCULO -->
+          <article class="col-12 col-lg-8">
+
+            <!-- meta breve -->
+            <div class="mb-4 d-flex flex-wrap gap-3 align-items-center">
+              <span class="text-muted">Publicado: 12 Marzo 2025</span>
+              <span class="text-muted">·  Tiempo: 2 h</span>
+              <span class="text-muted">·  Dificultad: Media</span>
+              <a href="contacto.html" class="btn btn-pastel btn-sm ms-auto">Pedir este pastel</a>
+            </div>
+
+            <!-- Imagen grande del post -->
+            <figure class="mb-4">
+              <img src="../assets/img/pastel-tres.jpg" alt="Pastel clásico Romina Bakery" class="img-fluid rounded" />
+            </figure>
+
+            <!-- Texto introductorio -->
+            <div class="mb-4">
+              <h2 class="h3" style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">Introducción</h2>
+              <p>
+                Esta receta clásica es perfecta para celebraciones. Conserva un interior húmedo y una cubierta ligera de crema. En la ficha encontrarás cantidades para un molde de 22 cm (8-10 porciones).
+              </p>
+            </div>
+
+            <!-- Ingredientes y Pasos (dos columnas en desktop) -->
+            <div class="row gx-4">
+              <div class="col-12 col-md-6 mb-4">
+                <h3 class="h5" style="color:var(--color-titulo); font-family:'Great Vibes', cursive;">Ingredientes</h3>
+                <ul class="list-unstyled">
+                  <li>• 300 g harina de trigo (todo uso)</li>
+                  <li>• 300 g azúcar</li>
+                  <li>• 4 huevos L</li>
+                  <li>• 240 ml leche</li>
+                  <li>• 120 g mantequilla a temperatura ambiente</li>
+                  <li>• 12 g polvo de hornear</li>
+                  <li>• 1 cdta esencia de vainilla</li>
+                  <li>• pizca de sal</li>
+                </ul>
+                <p class="small text-muted">Pro tip: tamiza la harina con el polvo de hornear para un bizcocho más aireado.</p>
+              </div>
+
+              <div class="col-12 col-md-6 mb-4">
+                <h3 class="h5" style="color:var(--color-titulo); font-family:'Great Vibes', cursive;">Utensilios y rendimientos</h3>
+                <ul class="list-unstyled">
+                  <li>• Molde redondo 22 cm (desmoldable)</li>
+                  <li>• Batidora eléctrica (o manual con paciencia)</li>
+                  <li>• Espátula, tamiz y manga pastelera (opcional)</li>
+                </ul>
+                <p class="small">Rinde aproximadamente 8–10 porciones.</p>
+              </div>
+            </div>
+
+            <!-- Pasos -->
+            <div class="mb-4">
+              <h3 class="h5" style="color:var(--color-titulo); font-family:'Great Vibes', cursive;">Preparación — Paso a paso</h3>
+              <ol>
+                <li><strong>Precalentar:</strong> 180ºC (convección 170ºC). Engrasar y enharinar el molde.</li>
+                <li><strong>Mezclar mantequilla y azúcar:</strong> batir hasta crema pálida. Añadir huevos uno a uno.</li>
+                <li><strong>Agregar secos y líquidos:</strong> alternar harina tamizada y leche, acabar con vainilla.</li>
+                <li><strong>Hornear:</strong> verter en el molde y hornear 30–40 min (prueba del palillo).</li>
+                <li><strong>Enfriar y montar:</strong> dejar enfriar 15 min, desmoldar y refrigerar antes de decorar.</li>
+              </ol>
+              <p class="mb-0">Si necesitas ayuda con el diseño o cantidades para más personas, <a href="contacto.html" class="link">contáctanos</a> — hacemos encargos personalizados.</p>
+            </div>
+
+            <!-- Consejos -->
+            <div class="mb-5">
+              <h4 style="color:var(--color-titulo); font-family:'Great Vibes', cursive;">Consejos rápidos</h4>
+              <ul>
+                <li>Para un bizcocho más húmedo, sustituye 30 ml de leche por nata (crema de leche).</li>
+                <li>Si el exterior se dora demasiado, baja la temperatura 10–15ºC y alarga 5–10 minutos.</li>
+              </ul>
+            </div>
+
+            <!-- CTA para encargo con imagen pequeña -->
+            <div class="d-flex align-items-center gap-3 mb-5">
+              <img src="../assets/img/pastel-portada.jpg" alt="Encargos Romina Bakery" width="96" height="96" class="rounded" />
+              <div>
+                <h5 class="mb-1" style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">¿Quieres este diseño?</h5>
+                <p class="mb-1">Pide un presupuesto rápido y nuestro equipo te asesora en sabores y presentación.</p>
+                <a href="contacto.html" class="btn btn-pastel">Solicitar presupuesto</a>
+              </div>
+            </div>
+
+            <!-- Comentarios - simple (estático) -->
+            <div>
+              <h4 style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">Comentarios</h4>
+              <p class="text-muted">Próximamente: comentarios activos con moderación.</p>
+            </div>
+
+          </article>
+
+          <!-- COLUMNA DERECHA: SIDEBAR -->
+          <aside class="col-12 col-lg-4">
+
+            <!-- Autor -->
+            <div class="card mb-4 product-card-mini p-3">
+              <div class="d-flex gap-3 align-items-center">
+                <img src="../assets/img/pastelera-uno.jpg" alt="Ana Gomez" width="64" height="64" class="rounded-circle">
+                <div>
+                  <h5 class="m-0" style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">Ana Gómez</h5>
+                  <small class="text-muted">Pastelera principal</small>
+                </div>
+              </div>
+              <p class="mt-3 mb-0">Ana lleva 8 años creando recetas clásicas y personalizadas, con especial cuidado en texturas y sabores.</p>
+            </div>
+
+            <!-- Datos rápidos -->
+            <div class="card mb-4 p-3">
+              <ul class="list-unstyled mb-0">
+                <li><strong>Tiempo:</strong> 2 h</li>
+                <li><strong>Rinde:</strong> 8–10 porciones</li>
+                <li><strong>Dificultad:</strong> Media</li>
+              </ul>
+            </div>
+
+            <!-- Productos relacionados (misma estética card-mini) -->
+            <div class="mb-4">
+              <h5 style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">También te puede gustar</h5>
+
+              <div class="row g-3 mt-2">
+                <div class="col-12">
+                  <div class="card product-card-mini">
+                    <img src="../assets/img/pastel-portada.jpg" alt="Pastel de temporada">
+                    <div class="card-body text-center">
+                      <h6 class="card-title mb-2" style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">Pastel de Temporada</h6>
+                      <a href="productos.html" class="btn btn-pastel btn-sm card-btn">Reservar</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="card product-card-mini">
+                    <img src="../assets/img/pastel-dos.jpg" alt="Edición premium">
+                    <div class="card-body text-center">
+                      <h6 class="card-title mb-2" style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">Edición Premium</h6>
+                      <a href="productos.html" class="btn btn-pastel btn-sm card-btn">Reservar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Formulario contacto rápido (sidebar) -->
+            <div class="card p-3">
+              <h6 style="font-family:'Great Vibes', cursive; color:var(--color-titulo);">¿Te interesa?</h6>
+              <form action="https://formspree.io/f/TU_ID" method="POST" class="mt-2">
+                <input type="hidden" name="_subject" value="Solicitud receta - Pastel clásico">
+                <div class="mb-2">
+                  <input type="text" name="name" class="form-control form-control-sm" placeholder="Tu nombre" required>
+                </div>
+                <div class="mb-2">
+                  <input type="tel" name="phone" class="form-control form-control-sm" placeholder="Teléfono" required>
+                </div>
+                <div class="mb-2">
+                  <input type="email" name="email" class="form-control form-control-sm" placeholder="tu@email.com" required>
+                </div>
+                <button type="submit" class="btn btn-pastel w-100 btn-sm">Contactar</button>
+              </form>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (idéntico al resto del sitio) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-layout">
+
+      <!-- IZQUIERDA: LOGO -->
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo d-flex align-items-center text-decoration-none" aria-label="Inicio Romina Bakery">
+          <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="48" height="48">
+          <span class="ms-2">Romina Bakery</span>
+        </a>
+      </div>
+
+      <!-- CENTRO: SUSCRIPCIÓN -->
+      <div class="footer-subscribe">
+        <form action="#" class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
+          <label for="email-news" class="visually-hidden">Correo electrónico</label>
+          <input id="email-news" type="email" name="email" placeholder="Tu correo" required>
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+
+      <!-- DERECHA: REDES -->
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <ul class="social-list list-unstyled">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container text-center">
+        <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (igual que en resto del sitio) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

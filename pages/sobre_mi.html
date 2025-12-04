@@ -97,91 +97,85 @@
       <div class="container">
         <h2 class="text-center mb-5">Nuestro equipo</h2>
 
-        <!-- Grid responsiva 1–2–3 -->
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 team-grid">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 team-grid justify-content-center">
 
           <!-- Miembro 1 -->
-          <article class="col team-member text-center">
-            <div class="team-photo mb-3">
-              <img src="../assets/img/pastelera-uno.jpg" class="img-fluid rounded-circle shadow" alt="Pastelera Ana" loading="lazy">
+          <article class="col d-flex justify-content-center">
+            <div class="team-card-mini">
+              <span class="team-ribbon">Pastelera</span>
+              <img src="../assets/img/pastelera-uno.jpg" alt="Pastelera Ana" loading="lazy">
+              <h4 class="name">Ana Gómez</h4>
+              <p class="role fw-bold">Pastelera principal</p>
+              <p class="bio">Crea los diseños personalizados y supervisa la calidad de cada pedido.</p>
             </div>
-            <h4 class="h5">Ana Gómez</h4>
-            <p class="role fw-bold text-muted">Pastelera principal</p>
-            <p class="bio">
-              Ana crea los diseños de pasteles personalizados y supervisa la calidad de cada pedido.
-            </p>
           </article>
 
           <!-- Miembro 2 -->
-          <article class="col team-member text-center">
-            <div class="team-photo mb-3">
-              <img src="../assets/img/pastelera-dos.jpg" class="img-fluid rounded-circle shadow" alt="Pastelera Laura" loading="lazy">
+          <article class="col d-flex justify-content-center">
+            <div class="team-card-mini">
+              <span class="team-ribbon">Decoradora</span>
+              <img src="../assets/img/pastelera-dos.jpg" alt="Pastelera Laura" loading="lazy">
+              <h4 class="name">Laura Pérez</h4>
+              <p class="role fw-bold">Decoradora</p>
+              <p class="bio">Experta en técnicas de glaseado y decoración artesanal.</p>
             </div>
-            <h4 class="h5">Laura Pérez</h4>
-            <p class="role fw-bold text-muted">Decoradora</p>
-            <p class="bio">
-              Laura es experta en técnicas de glaseado y decoración para todo tipo de eventos.
-            </p>
           </article>
 
           <!-- Miembro 3 -->
-          <article class="col team-member text-center">
-            <div class="team-photo mb-3">
-              <img src="../assets/img/pastelera-tres.jpg" class="img-fluid rounded-circle shadow" alt="Pastelera Marta" loading="lazy">
+          <article class="col d-flex justify-content-center">
+            <div class="team-card-mini">
+              <span class="team-ribbon">Chef de recetas</span>
+              <img src="../assets/img/pastelera-tres.jpg" alt="Pastelera Marta" loading="lazy">
+              <h4 class="name">Marta Ruiz</h4>
+              <p class="role fw-bold">Chef de recetas</p>
+              <p class="bio">Investiga sabores y crea nuevas recetas tradicionales.</p>
             </div>
-            <h4 class="h5">Marta Ruiz</h4>
-            <p class="role fw-bold text-muted">Chef de recetas</p>
-            <p class="bio">
-              Marta se encarga de las recetas y la investigación de sabores nuevos y tradicionales.
-            </p>
           </article>
 
         </div>
+
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer pt-5" role="contentinfo">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-4">
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-layout">
 
-      <!-- Marca -->
+      <!-- IZQUIERDA: SOLO LOGO -->
       <div class="footer-brand">
-        <a href="../index.html" class="footer-logo d-flex align-items-center text-decoration-none">
-          <img src="../assets/img/logo-postre.png" alt="Logotipo Romina Bakery" width="48" height="48">
+        <a href="index.html" class="footer-logo d-flex align-items-center text-decoration-none" aria-label="Inicio Romina Bakery">
+          <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="48" height="48">
           <span class="ms-2">Romina Bakery</span>
         </a>
-        <p class="footer-description mt-2">
-          Pastelería artesanal en tu ciudad. Tartas, cupcakes y pedidos personalizados.
-        </p>
-        <p class="footer-contact">
-          <strong>Tel:</strong> 312 000 0000 · <strong>Email:</strong> pedidos@rominabakery.com
-        </p>
       </div>
 
-      <!-- Newsletter -->
+      <!-- CENTRO: SUSCRIPCIÓN -->
       <div class="footer-subscribe">
         <form action="#" class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
-          <input id="email-news" type="email" class="form-control" placeholder="Tu correo" required>
-          <button type="submit" class="btn btn-pastel">Suscribirse</button>
+          <label for="email-news" class="visually-hidden">Correo electrónico</label>
+          <input id="email-news" type="email" name="email" placeholder="Tu correo" required>
+          <button type="submit">Suscribirse</button>
         </form>
       </div>
 
-      <!-- Redes -->
+      <!-- DERECHA: REDES -->
       <div class="footer-social">
         <h4>Síguenos</h4>
-        <ul class="list-unstyled">
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">TikTok</a></li>
+        <ul class="social-list list-unstyled">
+          <li><a href="#" aria-label="Instagram Romina Bakery">Instagram</a></li>
+          <li><a href="#" aria-label="Facebook Romina Bakery">Facebook</a></li>
+          <li><a href="#" aria-label="TikTok Romina Bakery">TikTok</a></li>
         </ul>
       </div>
 
     </div>
 
-    <div class="footer-bottom text-center mt-4 py-3">
-      <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
+    <div class="footer-bottom">
+      <div class="container text-center">
+        <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 
