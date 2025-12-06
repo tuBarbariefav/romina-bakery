@@ -1,0 +1,390 @@
+// _components.scss
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* BUTTONS */
+.btn-pastel,
+button,
+input[type="submit"],
+.footer-subscribe .newsletter button {
+    background: $color-pastel !important;
+    color: #2b190f !important;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color $trans-rapida, color .22s ease, transform .15s ease;
+}
+
+.btn-pastel:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: $color-pastel-hover !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* CARDS */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: $shadow-suave;
+    transition: transform .28s ease, box-shadow .28s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-hover;
+}
+
+.card-title {
+    font-size: 24px;
+    color: $color-titulo;
+}
+
+.card-text {
+    font-size: 14px;
+    color: $color-texto;
+}
+
+/* PRODUCT CARDS */
+.productos-grid {
+    align-items: start;
+}
+
+.product-card-mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: $shadow-suave;
+    transition: transform .28s ease, box-shadow .28s ease;
+    height: 100%;
+}
+
+.product-card-mini img {
+    width: 100%;
+    aspect-ratio: 16/11;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.product-card-mini .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 12px;
+    text-align: center;
+    flex: 1 1 auto;
+}
+
+.product-card-mini .card-title {
+    font-size: 20px;
+    margin: 8px 0 4px;
+    color: $color-titulo;
+}
+
+.product-card-mini .card-text {
+    font-size: 15px;
+    color: $color-texto;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.product-card-mini .card-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+@media (max-width:992px) {
+    .product-card-mini {
+        max-width: 320px;
+    }
+
+    .product-card-mini img {
+        aspect-ratio: 16/10;
+    }
+}
+
+@media (max-width:768px) {
+    .product-card-mini {
+        width: calc(100% - 48px);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .product-card-mini img {
+        height: 210px;
+        aspect-ratio: auto;
+    }
+}
+
+/* SLIDER */
+.slider-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-viewport {
+    overflow: hidden;
+    width: 100%;
+    outline: none;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+    transition: transform .36s cubic-bezier(.22, .9, .32, 1);
+    padding: 6px 0;
+    align-items: stretch;
+}
+
+.slide {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-btn {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-grid;
+    place-items: center;
+    box-shadow: $shadow-suave;
+    transition: transform .12s ease;
+}
+
+.slider-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-hover;
+}
+
+.slider-dots {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(26, 27, 31, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background: $color-pastel;
+}
+
+/* TEAM */
+.team-card-mini {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: $shadow-suave;
+    padding: 22px 18px;
+    text-align: center;
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.team-card-mini img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: block;
+    box-shadow: $shadow-suave;
+}
+
+.team-card-mini .name {
+    font-size: 20px;
+    color: $color-titulo;
+    margin-bottom: 6px;
+}
+
+.team-card-mini .role {
+    font-size: 14px;
+    color: #a07b5c;
+    margin-bottom: 10px;
+}
+
+.team-card-mini .bio {
+    font-size: 14px;
+    color: $color-texto;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* RIBBON */
+.team-ribbon {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $color-pastel;
+    padding: 4px 18px;
+    font-family: $font-brand;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* CONTACT */
+.contacto input.form-control,
+.contacto textarea.form-control {
+    background: $color-fondo;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12px 16px;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+.contacto input.form-control:focus,
+.contacto textarea.form-control:focus {
+    border-color: $color-pastel;
+    box-shadow: 0 0 8px rgba(255, 182, 185, 0.4);
+}
+
+.contacto label.form-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.contacto button[type="submit"] {
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+/* PRODUCT / CATEGORIA HELPERS */
+.hc-deco {
+    width: 64px;
+    height: 2px;
+    margin: 10px auto 14px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(168, 136, 106, 0.9), rgba(255, 182, 185, 0.9));
+    box-shadow: 0 3px 8px rgba(168, 136, 106, 0.06);
+}
+
+.hero-compact {
+    padding: 36px 0 32px;
+    text-align: center;
+    background: transparent;
+}
+
+.hero-compact .hero-compact-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 8px 16px;
+}
+
+.hc-subtitle {
+    margin: 6px auto 18px;
+    max-width: 680px;
+    color: rgba(26, 27, 31, 0.9);
+}
+
+.categoria-card-mini,
+.product-card-mini {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: $shadow-suave;
+}
+
+.categoria-card-mini img,
+.product-card-mini img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.categoria-card-mini .card-body,
+.product-card-mini .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    gap: 12px;
+    min-height: 120px;
+}
+
+.product-card-mini {
+    height: 100%;
+}
+
+.productos-grid {
+    align-items: stretch;
+}
+
+.productos-grid>article {
+    display: flex;
+    align-items: stretch;
+}
+
+/* UTILITIES */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* sticky guards */
+.sticky,
+.sticky-top,
+.sticky-sidebar {
+    position: static !important;
+    top: auto !important;
+}
+
+.post-content aside .card,
+.post-content aside .product-card-mini,
+.post-content aside .team-card-mini {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    margin-bottom: 18px;
+}
+
+.post-content {
+    padding-bottom: 24px;
+    overflow: visible;
+}

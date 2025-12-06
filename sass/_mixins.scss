@@ -1,0 +1,13 @@
+// _mixins.scss
+
+// Transición simple: recibe una lista de propiedades y un tiempo opcional.
+@mixin transition($props, $time: 0.3s ease) {
+    transition: #{$props} $time;
+}
+
+// Media query helper
+@mixin respond-max($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}

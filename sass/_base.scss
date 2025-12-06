@@ -1,0 +1,171 @@
+// _base.scss
+@use 'variables' as *;
+
+/* Fonts: puedes mantener también el <link> en index.html */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: $color-fondo;
+    font-family: $font-base;
+    color: $color-texto;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* images */
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 6px;
+    transition: transform .4s ease, box-shadow .3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: $shadow-hover;
+}
+
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-brand;
+    color: $color-titulo;
+    font-weight: 700;
+}
+
+.h1 {
+    font-size: 42px;
+}
+
+.h2 {
+    font-size: 34px;
+}
+
+.h3 {
+    font-size: 26px;
+}
+
+.h4 {
+    font-size: 20px;
+}
+
+.h5 {
+    font-size: 18px;
+}
+
+.h6 {
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+section,
+article,
+.card {
+    animation: fadeIn .6s ease forwards;
+}
+
+/* Exportar custom properties para compatibilidad con var(--...) */
+:root {
+    --color-fondo: #{$color-fondo};
+    --color-titulo: #{$color-titulo};
+    --color-texto: #{$color-texto};
+    --color-pastel: #{$color-pastel};
+    --color-pastel-hover: #{$color-pastel-hover};
+    --shadow-suave: #{$shadow-suave};
+    --shadow-hover: #{$shadow-hover};
+    --trans-rapida: #{$trans-rapida};
+    --max-width: #{$max-width};
+}
+
+.about a:hover,
+.sobre-nosotros a:hover {
+    color: $color-titulo !important; // marrón dorado bonito
+}
+
+/* =========================
+   FORZAR LINKS NEGROS EN LA PÁGINA "SOBRE / CONTACTO"
+   Cubre varias clases/markup posibles y todos los estados.
+   ========================= */
+.contacto a,
+.section-contacto a,
+.about a,
+.sobre-nosotros a,
+.page-about a,
+.page-sobre a,
+.article-contact a,
+.contact-links a,
+.contacto .social-list a,
+.contacto .contact-link,
+.contacto a[href^="tel:"],
+.contacto a[href^="mailto:"] {
+    color: $color-texto !important;
+    /* color negro del proyecto */
+    text-decoration: none !important;
+}
+
+.contacto a:visited,
+.section-contacto a:visited,
+.about a:visited,
+.sobre-nosotros a:visited {
+    color: $color-texto !important;
+}
+
+.contacto a:hover,
+.section-contacto a:hover,
+.about a:hover,
+.sobre-nosotros a:hover {
+    color: $color-titulo !important;
+    /* color al pasar el ratón */
+    text-decoration: underline !important;
+}

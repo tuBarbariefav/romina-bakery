@@ -1,0 +1,207 @@
+// sass/_footer.scss
+@use 'sass:color' as color;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ================================
+   FOOTER PRINCIPAL
+================================ */
+
+.site-footer {
+    background: #2b190f;
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+
+    /* Todos los links del footer → ROSA pastel */
+    a {
+        color: $color-pastel !important;
+        text-decoration: underline;
+        transition: color $trans-rapida;
+
+        &:hover {
+            /* antes: lighten($color-pastel, 8%); ahora: color.adjust */
+            color: color.adjust($color-pastel, $lightness: 8%);
+        }
+    }
+}
+
+/* ================================
+   LAYOUT
+================================ */
+
+.footer-layout {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ================================
+   BRAND LOGO
+================================ */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $color-pastel;
+    text-decoration: none;
+
+    img {
+        width: 45px;
+        height: 45px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+}
+
+/* ================================
+   NEWSLETTER
+================================ */
+
+.footer-subscribe {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .newsletter {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    input[type="email"] {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: transparent;
+        color: #fff;
+        min-width: 220px;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.72);
+        }
+    }
+
+    button {
+        background: $color-pastel !important;
+        color: $color-texto !important;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background $trans-rapida;
+
+        &:hover {
+            /* antes: $color-pastel-hover o lighten; mantenemos ajuste */
+            background: $color-pastel-hover !important;
+        }
+    }
+}
+
+/* ================================
+   SOCIAL
+================================ */
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    min-width: 140px;
+
+    h4 {
+        font-family: $font-brand;
+        color: $color-titulo;
+        margin: 0 0 4px 0;
+        font-size: 20px;
+    }
+
+    .social-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: $color-pastel !important; // Forzamos color rosa
+
+            &:hover {
+                /* antes: lighten($color-pastel, 10%); ahora adjust */
+                color: color.adjust($color-pastel, $lightness: 10%);
+            }
+        }
+    }
+}
+
+/* ================================
+   BARRA INFERIOR
+================================ */
+
+.footer-bottom {
+    background: $color-pastel;
+    color: $color-texto;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    margin-top: 0;
+    position: relative;
+    z-index: 10;
+
+    a {
+        color: $color-texto !important;
+
+        &:hover {
+            /* antes: darken($color-texto, 10%); ahora adjust con lightness negativo */
+            color: color.adjust($color-texto, $lightness: -10%);
+        }
+    }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@include respond-max(768px) {
+    .footer-layout {
+        flex-direction: column;
+        text-align: center;
+        padding: 8px 12px;
+        gap: 14px;
+    }
+
+    .footer-subscribe {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+
+        input[type="email"] {
+            max-width: 320px;
+            width: 90%;
+        }
+    }
+
+    .footer-brand {
+        order: 1;
+    }
+
+    .footer-social {
+        order: 3;
+        align-items: center;
+    }
+}
