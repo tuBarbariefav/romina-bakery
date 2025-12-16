@@ -14,29 +14,37 @@
   =============================== */
   const toggle = document.getElementById('nav-toggle');
   const hamburgerLabel = document.querySelector('label.hamburger[for="nav-toggle"]');
-  const navLinks = document.querySelectorAll('.main-nav a');
+  const nav = document.getElementById('mainNav');
+  const navLinks = Array.from(document.querySelectorAll('.main-nav a'));
 
+  // helper: set aria-expanded on label and data state on body
   function setMenuAria(isOpen) {
-    if (hamburgerLabel)
-      hamburgerLabel.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
+    if (hamburgerLabel) hamburgerLabel.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     if (isOpen) document.body.setAttribute('data-open', 'true');
     else document.body.removeAttribute('data-open');
   }
 
-  if (toggle && hamburgerLabel) {
-    setMenuAria(toggle.checked);
+  // Only attach menu behavior if the toggle and nav exist
+  if (toggle && hamburgerLabel && nav) {
+    // Initialise state on load
+    setMenuAria(Boolean(toggle.checked));
 
+    // When the checkbox changes (user toggles menu)
     toggle.addEventListener('change', () => {
-      setMenuAria(toggle.checked);
-      if (toggle.checked) {
-        const firstLink = document.querySelector('.main-nav a');
+      const isOpen = Boolean(toggle.checked);
+      setMenuAria(isOpen);
+
+      if (isOpen) {
+        // focus first link for keyboard users
+        const firstLink = nav.querySelector('a');
         if (firstLink) firstLink.focus();
       } else {
+        // return focus to the button/label
         hamburgerLabel.focus();
       }
     });
 
+    // Close menu when clicking a nav link (mobile UX)
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (toggle.checked) {
@@ -46,24 +54,39 @@
       });
     });
 
+    // Close on Escape
     document.addEventListener('keydown', (e) => {
-      if ((e.key === 'Escape' || e.key === 'Esc') && toggle.checked) {
+      const key = e.key || e.keyIdentifier || e.keyCode;
+      if ((key === 'Escape' || key === 'Esc' || key === 'Escape' || key === 27) && toggle.checked) {
         toggle.checked = false;
         setMenuAria(false);
         hamburgerLabel.focus();
       }
     });
 
+    // Click outside to close (robust check)
     document.addEventListener('click', (e) => {
       if (!toggle.checked) return;
-      const inside = e.target.closest('.main-nav') || e.target.closest('label.hamburger') || e.target.closest('#nav-toggle');
-      if (!inside) {
+
+      // If click is inside nav or on the hamburger/checkbox, do nothing
+      const clickedInsideNav = Boolean(e.target.closest('.main-nav'));
+      const clickedHamburger = Boolean(e.target.closest('label.hamburger')) || Boolean(e.target.closest('#nav-toggle'));
+
+      if (!clickedInsideNav && !clickedHamburger) {
         toggle.checked = false;
         setMenuAria(false);
         hamburgerLabel.focus();
       }
     });
-  }
+
+    // Optional: close the menu on window resize to desktop to avoid stuck-open state
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && toggle.checked) {
+        toggle.checked = false;
+        setMenuAria(false);
+      }
+    });
+  } // end menu attach
 
   /* ===============================
      FORMSPREE — FORMULARIOS
@@ -90,7 +113,7 @@
       e.preventDefault();
 
       const btn = form.querySelector("button[type='submit'], input[type='submit']");
-      const originalText = btn?.tagName === "INPUT" ? btn.value : btn?.textContent;
+      const originalText = btn ? (btn.tagName === "INPUT" ? btn.value : btn.textContent) : null;
 
       if (btn) {
         btn.disabled = true;
@@ -207,4 +230,4 @@
     obs.observe(heroSection);
   });
 
-})();
+})();  

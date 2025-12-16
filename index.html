@@ -18,16 +18,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
 
+
 </head>
 
 <body>
-
-  <!-- 
-MENÚ HAMBURGUESA -->
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-  <label for="nav-toggle" class="hamburger" aria-label="Menú móvil">
-    <span></span>
-  </label>
 
   <header class="site-header" role="banner">
     <div class="container d-flex align-items-center justify-content-between">
@@ -38,8 +32,14 @@ MENÚ HAMBURGUESA -->
         <h1 class="ms-2">Romina Bakery</h1>
       </a>
 
+      <!-- NAV TOGGLE (ahora INSIDE header, estructura accesible) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger" aria-label="Abrir menú" aria-controls="mainNav" aria-expanded="false">
+        <span></span>
+      </label>
+
       <!-- NAV -->
-      <nav class="main-nav" aria-label="Menú principal">
+      <nav id="mainNav" class="main-nav" aria-label="Menú principal">
         <ul class="d-flex list-unstyled mb-0">
           <li class="me-3"><a href="index.html" data-cat="home">Inicio</a></li>
           <li class="me-3"><a href="pages/productos.html" data-cat="productos">Productos</a></li>
@@ -51,6 +51,7 @@ MENÚ HAMBURGUESA -->
 
     </div>
   </header>
+
 
   <!-- HERO -->
   <section class="hero" aria-label="Sección principal">
@@ -229,6 +230,7 @@ MENÚ HAMBURGUESA -->
       }
     });
   </script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
