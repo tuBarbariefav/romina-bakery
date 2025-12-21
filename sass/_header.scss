@@ -1,175 +1,155 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+/* ============================================================
+   HEADER BASE
+============================================================ */
 .site-header {
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     background: #fff7f2;
-    position: relative;
-    z-index: 50;
+    position: relative; // Necesario para el panel móvil
+    z-index: 1000; // Evita que el collapse quede detrás
 
     .logo {
         display: flex;
         align-items: center;
         gap: 10px;
         text-decoration: none;
-    }
 
-    .logo h1 {
-        font-size: 32px;
-        color: $color-titulo;
-        margin: 0;
-    }
-
-    .main-nav ul {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .main-nav a {
-        color: $color-texto;
-        text-decoration: none;
-        transition: color $trans-rapida;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active {
-        color: $color-titulo;
-    }
-
-    /* ---------------------------
-     Hamburger / toggle (visually hidden checkbox + label)
-     Keep the checkbox accessible but visually hidden.
-     The label.hamburger is styled here and will be shown on mobile.
-     --------------------------- */
-    .nav-toggle {
-        /* make checkbox available to assistive tech but visually hidden */
-        position: absolute;
-        left: -9999px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-        border: 0;
-        padding: 0;
-        margin: 0;
-    }
-
-    .hamburger {
-        display: none;
-        /* shown only on mobile in media query */
-        cursor: pointer;
-        width: 36px;
-        height: 32px;
-        position: relative;
-        right: 0;
-        top: 0;
-        background: transparent;
-        border: none;
-        padding: 4px;
-        margin-left: 12px;
-
-        span,
-        span::before,
-        span::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 4px;
-            background: $color-titulo;
-            border-radius: 4px;
-            position: absolute;
-            transition: transform .28s ease, opacity .2s ease;
-            left: 0;
-        }
-
-        span {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        span::before {
-            top: -10px;
-        }
-
-        span::after {
-            top: 10px;
+        h1 {
+            font-size: 32px;
+            color: $color-titulo;
+            margin: 0;
         }
     }
-
-    /* Checked state: transform burger to X (we rely on DOM order: .nav-toggle + .hamburger) */
-    .nav-toggle:checked+.hamburger span {
-        background: transparent;
-    }
-
-    .nav-toggle:checked+.hamburger span::before {
-        transform: translateY(10px) rotate(45deg);
-    }
-
-    .nav-toggle:checked+.hamburger span::after {
-        transform: translateY(-10px) rotate(-45deg);
-    }
-
-    /* ---------------------------
-     Responsive mobile rules
-     These are inside the .site-header block to preserve your original nesting.
-     --------------------------- */
-    @include respond-max(768px) {
-        .hamburger {
-            display: block;
-            z-index: 1400; // ensure on top of header content
-        }
-
-        /* Mobile menu: off-canvas dropdown/panel aligned to the right */
-        .main-nav ul {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 12px;
-            width: 60%;
-            max-width: 340px;
-            background: #fff7f2;
-            flex-direction: column;
-            padding: 16px;
-            gap: 12px;
-            box-shadow: $shadow-hover;
-            transform: translateX(100%); // hidden by default (off-canvas)
-            transition: transform .28s ease-in-out;
-            border-radius: 8px;
-            z-index: 1200;
-            display: flex !important;
-            align-items: flex-start;
-        }
-
-        /* Reveal the menu when checkbox is checked.
-       Using the adjacency selector that matches the DOM: input + label + nav */
-        .nav-toggle:checked+.hamburger+.main-nav ul,
-        .nav-toggle:checked~.main-nav ul,
-        .nav-toggle:checked~header .main-nav ul {
-            transform: translateX(0);
-        }
-
-        .main-nav ul li {
-            width: 100%;
-        }
-
-        .main-nav ul li a {
-            display: block;
-            padding: 10px 8px;
-            color: $color-texto;
-        }
-
-        /* Prevent horizontal overflow potential on mobile */
-        html,
-        body {
-            overflow-x: hidden;
-        }
-    }
-
-    // end respond-max
 }
 
-// end .site-header
+/* ============================================================
+   BOOTSTRAP NAVBAR CUSTOM RESET
+============================================================ */
+.navbar {
+    padding: 0; // Asegura que tu header no cambie de tamaño
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100; // Encima del panel móvil
+}
+
+/* Ícono hamburguesa — líneas doradas */
+.navbar-toggler-icon {
+    width: 28px;
+    height: 3px;
+    background-color: $color-titulo;
+    position: relative;
+    display: block;
+    border-radius: 2px;
+    transition: 0.25s ease-in-out;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $color-titulo;
+        border-radius: 2px;
+        transition: 0.25s ease-in-out;
+    }
+
+    &::before {
+        top: -8px;
+    }
+
+    &::after {
+        top: 8px;
+    }
+}
+
+/* Animación en X */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+
+    &::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+}
+
+/* ============================================================
+   LINKS DEL MENÚ
+============================================================ */
+.navbar-nav .nav-link {
+    color: $color-texto;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: color 0.25s ease;
+
+    &:hover,
+    &.active {
+        color: $color-titulo;
+    }
+}
+
+/* ============================================================
+   MOBILE MENU — SLIDE FROM RIGHT
+============================================================ */
+@media (max-width: 991px) {
+
+    /* Usamos position absolute + contenedor relativo (site-header) */
+    .navbar-collapse {
+        position: absolute !important;
+        top: 100%;
+        right: 0;
+        width: 70%;
+        max-width: 320px;
+        background: #fff7f2;
+        padding: 22px;
+        border-radius: 12px 0 0 12px;
+        box-shadow: $shadow-hover;
+        z-index: 1200;
+
+        /* Oculto inicialmente fuera de pantalla */
+        transform: translateX(100%);
+        transition: transform .28s ease-out;
+    }
+
+    /* Cuando está abierto → aparece */
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: right;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 12px 0;
+    }
+}
+
+/* ============================================================
+   EVITAR OVERFLOW EN MÓVIL
+============================================================ */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+}

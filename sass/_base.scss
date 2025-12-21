@@ -1,9 +1,9 @@
-// _base.scss
 @use 'variables' as *;
+@use 'mixins' as *;
 
-/* Fonts: puedes mantener también el <link> en index.html */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Great+Vibes&display=swap');
-
+/* ============================================================
+   RESET + BASE GLOBAL
+============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -30,12 +30,14 @@ body {
     padding: 0 1rem;
 }
 
-/* images */
+/* ============================================================
+   IMÁGENES
+============================================================ */
 img {
     max-width: 100%;
     display: block;
     border-radius: 6px;
-    transition: transform .4s ease, box-shadow .3s ease;
+    @include transition(transform .4s ease, box-shadow .3s ease);
 }
 
 img:hover {
@@ -43,7 +45,9 @@ img:hover {
     box-shadow: $shadow-hover;
 }
 
-/* headings */
+/* ============================================================
+   HEADINGS
+============================================================ */
 h1,
 h2,
 h3,
@@ -85,6 +89,9 @@ h6,
     font-size: 16px;
 }
 
+/* ============================================================
+   ANIMACIONES
+============================================================ */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -109,13 +116,15 @@ h6,
     }
 }
 
+/* Animación base para secciones */
 section,
-article,
-.card {
+article {
     animation: fadeIn .6s ease forwards;
 }
 
-/* Exportar custom properties para compatibilidad con var(--...) */
+/* ============================================================
+   EXPORTAR VARIABLES A :root (para JS / Bootstrap)
+============================================================ */
 :root {
     --color-fondo: #{$color-fondo};
     --color-titulo: #{$color-titulo};
@@ -128,15 +137,17 @@ article,
     --max-width: #{$max-width};
 }
 
+/* ============================================================
+   UTILIDADES GLOBALS
+============================================================ */
+
+/* Hover dorado para enlaces en About/Sobre nosotros */
 .about a:hover,
 .sobre-nosotros a:hover {
-    color: $color-titulo !important; // marrón dorado bonito
+    color: $color-titulo !important;
 }
 
-/* =========================
-   FORZAR LINKS NEGROS EN LA PÁGINA "SOBRE / CONTACTO"
-   Cubre varias clases/markup posibles y todos los estados.
-   ========================= */
+/* Links negros forzados en páginas de contacto */
 .contacto a,
 .section-contacto a,
 .about a,
@@ -150,15 +161,7 @@ article,
 .contacto a[href^="tel:"],
 .contacto a[href^="mailto:"] {
     color: $color-texto !important;
-    /* color negro del proyecto */
     text-decoration: none !important;
-}
-
-.contacto a:visited,
-.section-contacto a:visited,
-.about a:visited,
-.sobre-nosotros a:visited {
-    color: $color-texto !important;
 }
 
 .contacto a:hover,
@@ -166,6 +169,5 @@ article,
 .about a:hover,
 .sobre-nosotros a:hover {
     color: $color-titulo !important;
-    /* color al pasar el ratón */
     text-decoration: underline !important;
 }

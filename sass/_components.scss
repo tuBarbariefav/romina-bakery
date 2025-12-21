@@ -1,8 +1,11 @@
-// _components.scss
+@use "sass:map";
 @use 'variables' as *;
 @use 'mixins' as *;
 
-/* BUTTONS */
+/* ============================================================
+   BUTTONS
+============================================================ */
+
 .btn-pastel,
 button,
 input[type="submit"],
@@ -10,11 +13,11 @@ input[type="submit"],
     background: $color-pastel !important;
     color: #2b190f !important;
     border: none;
-    border-radius: 10px;
+    border-radius: map-get($radius, lg);
     padding: 8px 16px;
     font-size: 15px;
     cursor: pointer;
-    transition: background-color $trans-rapida, color .22s ease, transform .15s ease;
+    @include transition(background-color $trans-rapida, color .22s ease, transform .15s ease);
 }
 
 .btn-pastel:hover,
@@ -25,18 +28,21 @@ input[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-/* CARDS */
+/* ============================================================
+   GENERIC CARD STYLES
+============================================================ */
+
 .card {
     border: none;
     border-radius: 12px;
-    box-shadow: $shadow-suave;
-    transition: transform .28s ease, box-shadow .28s ease;
+    @include shadow(suave);
+    @include transition(transform .28s ease, box-shadow .28s ease);
     overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: $shadow-hover;
+    @include shadow(hover);
 }
 
 .card-title {
@@ -49,7 +55,10 @@ input[type="submit"]:hover {
     color: $color-texto;
 }
 
-/* PRODUCT CARDS */
+/* ============================================================
+   PRODUCT CARD MINI
+============================================================ */
+
 .productos-grid {
     align-items: start;
 }
@@ -64,74 +73,78 @@ input[type="submit"]:hover {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: $shadow-suave;
-    transition: transform .28s ease, box-shadow .28s ease;
+    @include shadow(suave);
+    @include transition(transform .28s ease, box-shadow .28s ease);
     height: 100%;
+
+    img {
+        width: 100%;
+        aspect-ratio: 16/11;
+        object-fit: cover;
+        display: block;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        gap: 12px;
+        text-align: center;
+        flex: 1 1 auto;
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin: 8px 0 4px;
+        color: $color-titulo;
+    }
+
+    .card-text {
+        font-size: 15px;
+        color: $color-texto;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
+    .card-btn {
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+    }
 }
 
-.product-card-mini img {
-    width: 100%;
-    aspect-ratio: 16/11;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px 8px 0 0;
-}
-
-.product-card-mini .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    gap: 12px;
-    text-align: center;
-    flex: 1 1 auto;
-}
-
-.product-card-mini .card-title {
-    font-size: 20px;
-    margin: 8px 0 4px;
-    color: $color-titulo;
-}
-
-.product-card-mini .card-text {
-    font-size: 15px;
-    color: $color-texto;
-    line-height: 1.5;
-    margin-bottom: 8px;
-}
-
-.product-card-mini .card-btn {
-    padding: 10px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-@media (max-width:992px) {
+/* RESPONSIVE PRODUCT CARDS */
+@include respond-max(992px) {
     .product-card-mini {
         max-width: 320px;
-    }
 
-    .product-card-mini img {
-        aspect-ratio: 16/10;
+        img {
+            aspect-ratio: 16/10;
+        }
     }
 }
 
-@media (max-width:768px) {
+@include respond-max(768px) {
     .product-card-mini {
         width: calc(100% - 48px);
         max-width: 100%;
         margin: 0 auto;
-    }
 
-    .product-card-mini img {
-        height: 210px;
-        aspect-ratio: auto;
+        img {
+            height: 210px;
+            aspect-ratio: auto;
+        }
     }
 }
 
-/* SLIDER */
+/* ============================================================
+   SLIDER
+============================================================ */
+
 .slider-wrap {
     position: relative;
     display: flex;
@@ -169,13 +182,13 @@ input[type="submit"]:hover {
     cursor: pointer;
     display: inline-grid;
     place-items: center;
-    box-shadow: $shadow-suave;
-    transition: transform .12s ease;
+    @include shadow(suave);
+    @include transition(transform .12s ease);
 }
 
 .slider-btn:hover {
     transform: translateY(-3px);
-    box-shadow: $shadow-hover;
+    @include shadow(hover);
 }
 
 .slider-dots {
@@ -192,55 +205,57 @@ input[type="submit"]:hover {
     background: rgba(26, 27, 31, 0.12);
     border: 1px solid rgba(0, 0, 0, 0.04);
     cursor: pointer;
+
+    &.active {
+        background: $color-pastel;
+    }
 }
 
-.slider-dot.active {
-    background: $color-pastel;
-}
+/* ============================================================
+   TEAM CARD
+============================================================ */
 
-/* TEAM */
 .team-card-mini {
     position: relative;
     width: 100%;
     max-width: 280px;
     background: #fff;
     border-radius: 14px;
-    box-shadow: $shadow-suave;
     padding: 22px 18px;
     text-align: center;
-    transition: transform .28s ease, box-shadow .28s ease;
+    @include shadow(suave);
+    @include transition(transform .28s ease, box-shadow .28s ease);
+
+    img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto 14px;
+        display: block;
+        @include shadow(suave);
+    }
+
+    .name {
+        font-size: 20px;
+        color: $color-titulo;
+        margin-bottom: 6px;
+    }
+
+    .role {
+        font-size: 14px;
+        color: #a07b5c;
+        margin-bottom: 10px;
+    }
+
+    .bio {
+        font-size: 14px;
+        color: $color-texto;
+        line-height: 1.45;
+    }
 }
 
-.team-card-mini img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto 14px;
-    display: block;
-    box-shadow: $shadow-suave;
-}
-
-.team-card-mini .name {
-    font-size: 20px;
-    color: $color-titulo;
-    margin-bottom: 6px;
-}
-
-.team-card-mini .role {
-    font-size: 14px;
-    color: #a07b5c;
-    margin-bottom: 10px;
-}
-
-.team-card-mini .bio {
-    font-size: 14px;
-    color: $color-texto;
-    line-height: 1.45;
-    margin: 0;
-}
-
-/* RIBBON */
+/* Ribbon decorativa */
 .team-ribbon {
     position: absolute;
     top: -18px;
@@ -252,17 +267,20 @@ input[type="submit"]:hover {
     font-size: 20px;
     color: #fff;
     border-radius: 50px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    @include shadow(suave);
 }
 
-/* CONTACT */
+/* ============================================================
+   CONTACT FORM STYLES
+============================================================ */
+
 .contacto input.form-control,
 .contacto textarea.form-control {
     background: $color-fondo;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 12px 16px;
     border-radius: 10px;
-    transition: .3s ease;
+    @include transition(.3s ease);
 }
 
 .contacto input.form-control:focus,
@@ -281,13 +299,18 @@ input[type="submit"]:hover {
     border-radius: 10px;
 }
 
-/* PRODUCT / CATEGORIA HELPERS */
+/* ============================================================
+   CATEGORY HELPERS
+============================================================ */
+
 .hc-deco {
     width: 64px;
     height: 2px;
     margin: 10px auto 14px;
     border-radius: 2px;
-    background: linear-gradient(90deg, rgba(168, 136, 106, 0.9), rgba(255, 182, 185, 0.9));
+    background: linear-gradient(90deg,
+            rgba(168, 136, 106, 0.9),
+            rgba(255, 182, 185, 0.9));
     box-shadow: 0 3px 8px rgba(168, 136, 106, 0.06);
 }
 
@@ -295,12 +318,12 @@ input[type="submit"]:hover {
     padding: 36px 0 32px;
     text-align: center;
     background: transparent;
-}
 
-.hero-compact .hero-compact-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 8px 16px;
+    .hero-compact-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 8px 16px;
+    }
 }
 
 .hc-subtitle {
@@ -309,52 +332,10 @@ input[type="submit"]:hover {
     color: rgba(26, 27, 31, 0.9);
 }
 
-.categoria-card-mini,
-.product-card-mini {
-    max-width: 360px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: $shadow-suave;
-}
+/* ============================================================
+   UTILITIES
+============================================================ */
 
-.categoria-card-mini img,
-.product-card-mini img {
-    width: 100%;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px 10px 0 0;
-}
-
-.categoria-card-mini .card-body,
-.product-card-mini .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px;
-    gap: 12px;
-    min-height: 120px;
-}
-
-.product-card-mini {
-    height: 100%;
-}
-
-.productos-grid {
-    align-items: stretch;
-}
-
-.productos-grid>article {
-    display: flex;
-    align-items: stretch;
-}
-
-/* UTILITIES */
 .visually-hidden {
     position: absolute !important;
     width: 1px;
@@ -367,20 +348,18 @@ input[type="submit"]:hover {
     border: 0;
 }
 
-/* sticky guards */
+/* Sticky elements reset */
 .sticky,
 .sticky-top,
 .sticky-sidebar {
     position: static !important;
-    top: auto !important;
 }
 
+/* Correcciones de aside */
 .post-content aside .card,
 .post-content aside .product-card-mini,
 .post-content aside .team-card-mini {
     position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
     margin-bottom: 18px;
 }
 

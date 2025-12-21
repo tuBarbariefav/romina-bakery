@@ -1,13 +1,49 @@
-// _mixins.scss
+@use 'variables' as *;
 
-// Transición simple: recibe una lista de propiedades y un tiempo opcional.
-@mixin transition($props, $time: 0.3s ease) {
-    transition: #{$props} $time;
+// ===============================================
+// MIXINS — ROMINA BAKERY
+// Archivo optimizado, profesional y escalable
+// ===============================================
+
+// ⭐ Transición reutilizable (acepta una o varias)
+@mixin transition($transitions...) {
+    transition: $transitions;
 }
 
-// Media query helper
+// ⭐ Media query hasta un max-width
 @mixin respond-max($px) {
     @media (max-width: $px) {
         @content;
     }
+}
+
+// ⭐ Tipografía rápida
+// Uso: @include font(16px, 600);
+// Uso: @include font(48px, 700, $font-brand);
+@mixin font($size, $weight: 400, $family: $font-base) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+}
+
+// ⭐ Aplicar sombra desde variables
+@mixin shadow($type: suave) {
+    @if $type ==suave {
+        box-shadow: $shadow-suave;
+    }
+
+    @else if $type ==hover {
+        box-shadow: $shadow-hover;
+    }
+}
+
+// ⭐ Acceso rápido a colores desde el map
+// Uso: color: color-map(titulo);
+@function color-map($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
+
+    @warn "La clave `#{$key}` no existe en el mapa `$colors`.";
+    @return null;
 }
