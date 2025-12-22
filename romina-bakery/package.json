@@ -1,0 +1,12 @@
+{
+    "name": "romina-bakery",
+    "version": "1.0.0",
+    "private": true,
+    "devDependencies": {
+        "sass": "^1.74.1"
+    },
+    "scripts": {
+        "sass": "sass sass/main.scss:assets/css/style.css --no-source-map",
+        "sass:watch": "sass --watch sass/main.scss:assets/css/style.css --no-source-map"
+    }
+}

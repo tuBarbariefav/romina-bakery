@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romina Bakery | Productos artesanales</title>
+
+  <meta name="description"
+    content="Descubrí los productos artesanales de Romina Bakery: pasteles, cupcakes y galletas hechas con ingredientes de calidad.">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" role="banner">
+    <nav class="navbar navbar-expand-lg container">
+
+      <a href="../index.html" class="navbar-brand d-flex align-items-center text-decoration-none"
+        aria-label="Ir a la página principal">
+        <img src="../assets/img/logo-bakery.png" alt="Logo de Romina Bakery" width="64" height="64">
+        <span class="ms-2 fw-bold">Romina Bakery</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+        aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre_mi.html">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO COMPACTO ================= -->
+    <section class="hero-compact" aria-labelledby="productos-title">
+      <div class="container hero-compact-inner">
+        <h1 id="productos-title" class="hc-title">Nuestros productos</h1>
+        <div class="hc-deco" aria-hidden="true"></div>
+        <p class="hc-subtitle">Sabores artesanales y recetas hechas con cariño.</p>
+        <a href="#lista-productos" class="btn btn-pastel">Ver destacados</a>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORÍAS ================= -->
+    <section class="categorias seccion-productos py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Categorías</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
+          <article class="col d-flex justify-content-center">
+            <div class="categoria-card-mini">
+              <img src="../assets/img/pastel-portada.jpg" alt="Pasteles artesanales">
+              <div class="card-body text-center">
+                <h3 class="h5">Pasteles</h3>
+                <a href="#pasteles" class="btn btn-pastel mt-2">Ver más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col d-flex justify-content-center">
+            <div class="categoria-card-mini">
+              <img src="../assets/img/cupcake-portada.jpg" alt="Cupcakes artesanales">
+              <div class="card-body text-center">
+                <h3 class="h5">Cupcakes</h3>
+                <a href="#cupcakes" class="btn btn-pastel mt-2">Ver más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col d-flex justify-content-center">
+            <div class="categoria-card-mini">
+              <img src="../assets/img/galleta-portada.jpg" alt="Galletas artesanales">
+              <div class="card-body text-center">
+                <h3 class="h5">Galletas</h3>
+                <a href="#galletas" class="btn btn-pastel mt-2">Ver más</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRODUCTOS DESTACADOS ================= -->
+    <section id="lista-productos" class="lista-productos py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Productos destacados</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
+          <article class="col d-flex">
+            <div class="card product-card-mini w-100">
+              <img src="../assets/img/pastel-dos.jpg" alt="Pastel clásico artesanal" loading="lazy">
+              <div class="card-body">
+                <h3 class="h5">Pastel clásico</h3>
+                <p>Clásico y delicioso.</p>
+                <a href="contacto.html" class="btn btn-pastel mt-2">Reservar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col d-flex">
+            <div class="card product-card-mini w-100">
+              <img src="../assets/img/cupcakes-destacados.jpg" alt="Cupcake de vainilla artesanal" loading="lazy">
+              <div class="card-body">
+                <h3 class="h5">Cupcake de vainilla</h3>
+                <p>Suave y esponjoso.</p>
+                <a href="contacto.html" class="btn btn-pastel mt-2">Reservar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col d-flex">
+            <div class="card product-card-mini w-100">
+              <img src="../assets/img/galletas-destacado.jpg" alt="Galletas de mantequilla artesanales" loading="lazy">
+              <div class="card-body">
+                <h3 class="h5">Galletas de mantequilla</h3>
+                <p>Crujientes y con vainilla real.</p>
+                <a href="contacto.html" class="btn btn-pastel mt-2">Reservar</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-layout">
+
+      <div class="footer-brand">
+        <a href="../index.html" class="d-flex align-items-center text-decoration-none">
+          <img src="../assets/img/logo-bakery.png" alt="Logo Romina Bakery" width="48">
+          <span class="ms-2">Romina Bakery</span>
+        </a>
+      </div>
+
+      <div class="footer-subscribe">
+        <form class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
+          <label for="email-news" class="visually-hidden">Correo electrónico</label>
+          <input id="email-news" type="email" placeholder="Tu correo" required>
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+
+      <div class="footer-social">
+        <h4>Seguinos</h4>
+        <ul class="list-unstyled">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>© 2025 Romina Bakery. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

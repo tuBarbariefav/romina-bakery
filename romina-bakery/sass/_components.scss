@@ -1,0 +1,219 @@
+@use "sass:map";
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ============================================================
+   PLACEHOLDERS (EXTEND)
+============================================================ */
+
+%btn-base {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: map.get($radius, lg);
+    @include transition(background-color $trans-rapida, color .22s ease, transform .15s ease);
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.btn-pastel,
+button,
+input[type="submit"],
+.footer-subscribe .newsletter button {
+    @extend %btn-base;
+    background: color(pastel) !important;
+    color: #2b190f !important;
+}
+
+.btn-pastel:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: color(pastel-hover) !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   GENERIC CARD STYLES
+============================================================ */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    @include shadow(suave);
+    @include transition(transform .28s ease, box-shadow .28s ease);
+
+    &:hover {
+        transform: translateY(-6px);
+        @include shadow(hover);
+    }
+}
+
+.card-title {
+    font-size: 24px;
+    color: color(titulo);
+}
+
+.card-text {
+    font-size: 14px;
+    color: color(texto);
+}
+
+/* ============================================================
+   PRODUCT CARD MINI
+============================================================ */
+
+.productos-grid {
+    align-items: start;
+}
+
+.product-card-mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    @include shadow(suave);
+    @include transition(transform .28s ease, box-shadow .28s ease);
+
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 11;
+        object-fit: cover;
+        display: block;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        gap: 12px;
+        text-align: center;
+        flex: 1 1 auto;
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin: 8px 0 4px;
+        color: color(titulo);
+    }
+
+    .card-text {
+        font-size: 15px;
+        color: color(texto);
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
+    .card-btn {
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+/* RESPONSIVE PRODUCT CARDS */
+@include respond-max(992px) {
+    .product-card-mini {
+        max-width: 320px;
+
+        img {
+            aspect-ratio: 16 / 10;
+        }
+    }
+}
+
+@include respond-max(768px) {
+    .product-card-mini {
+        width: calc(100% - 48px);
+        max-width: 100%;
+
+        img {
+            height: 210px;
+            aspect-ratio: auto;
+        }
+    }
+}
+
+/* ============================================================
+   SLIDER (CSS OK — NO TOCAR)
+============================================================ */
+
+.slider-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-viewport {
+    overflow: hidden;
+    width: 100%;
+    outline: none;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    padding: 6px 0;
+    will-change: transform;
+    transition: transform .36s cubic-bezier(.22, .9, .32, 1);
+}
+
+.slide {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-btn {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    @include shadow(suave);
+    @include transition(transform .12s ease);
+
+    &:hover {
+        transform: translateY(-3px);
+        @include shadow(hover);
+    }
+}
+
+.slider-dots {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(26, 27, 31, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+
+    &.active {
+        background: color(pastel);
+    }
+}

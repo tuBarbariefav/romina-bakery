@@ -1,0 +1,110 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ============================================================
+   HEADER BASE
+============================================================ */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    padding: 15px 0;
+    background: color(fondo);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   NAVBAR RESET (BOOTSTRAP)
+============================================================ */
+
+.navbar {
+    padding: 0;
+}
+
+/* ============================================================
+   LOGO / TÍTULO DEL SITIO
+   (SEMÁNTICO, SIN BOOTSTRAP, MISMA TIPOGRAFÍA QUE TÍTULOS)
+============================================================ */
+
+.site-header .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.site-header .site-title {
+    font-family: $font-brand; // Great Vibes
+    font-size: 32px;
+    font-weight: 700;
+    color: color(titulo);
+    margin: 0;
+    line-height: 1;
+}
+
+/* Responsive título */
+@include respond-max(576px) {
+    .site-header .site-title {
+        font-size: 26px;
+    }
+}
+
+/* ============================================================
+   BOTÓN HAMBURGUESA (BOOTSTRAP PURO)
+============================================================ */
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ============================================================
+   LINKS DEL MENÚ
+============================================================ */
+
+.navbar-nav .nav-link {
+    font-family: $font-base; // Raleway
+    font-size: 16px;
+    color: color(texto);
+    padding: 10px 14px;
+    transition: color 0.25s ease;
+
+    &:hover,
+    &.active {
+        color: color(titulo);
+    }
+}
+
+/* ============================================================
+   MENÚ MOBILE (DESPLEGABLE HACIA ABAJO)
+============================================================ */
+
+@include respond-max(991px) {
+    .navbar-collapse {
+        background: color(fondo);
+        padding: 20px;
+        border-radius: 14px;
+        margin-top: 12px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   EVITAR OVERFLOW HORIZONTAL
+============================================================ */
+
+@include respond-max(768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+}
