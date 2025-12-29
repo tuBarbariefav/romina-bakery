@@ -40,7 +40,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="menuNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Productos</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="sobre_mi.html">Sobre nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
@@ -126,38 +126,40 @@
 
 
   <!-- ================= FOOTER ================= -->
-  <footer class="site-footer" role="contentinfo">
+   <footer class="site-footer" role="contentinfo">
     <div class="container footer-layout">
 
       <div class="footer-brand">
-        <a href="../index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="../assets/img/logo-bakery.png" alt="Logo Romina Bakery" width="48">
+        <a href="../index.html" class="footer-logo d-flex align-items-center text-decoration-none"
+          aria-label="Inicio Romina Bakery">
+          <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="48" height="48">
           <span class="ms-2">Romina Bakery</span>
         </a>
       </div>
 
       <div class="footer-subscribe">
-        <form class="newsletter d-flex gap-2">
-          <label for="newsletter-email" class="visually-hidden">Correo electrónico</label>
-          <input id="newsletter-email" type="email" placeholder="Tu correo" required>
+        <form class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
+          <label for="email-news" class="visually-hidden">Correo electrónico</label>
+          <input id="email-news" type="email" placeholder="Tu correo" required>
           <button type="submit">Suscribirse</button>
         </form>
       </div>
 
       <div class="footer-social">
-        <h4>Seguinos</h4>
-        <ul class="list-unstyled">
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">TikTok</a></li>
+        <h4>Síguenos</h4>
+        <ul class="social-list list-unstyled">
+          <li><a href="#" aria-label="Instagram Romina Bakery">Instagram</a></li>
+          <li><a href="#" aria-label="Facebook Romina Bakery">Facebook</a></li>
+          <li><a href="#" aria-label="TikTok Romina Bakery">TikTok</a></li>
         </ul>
       </div>
 
     </div>
 
-    <div class="footer-bottom text-center">
-      <p>© <time datetime="2025">2025</time> Romina Bakery. Todos los derechos reservados.</p>
-    </div>
+    <div class="footer-bottom">
+      <div class="container text-center">
+        <p>© <time datetime="2025">2025</time> Romina Bakery. Todos los derechos reservados.</p>
+      </div>
   </footer>
 
   <!-- JS -->
