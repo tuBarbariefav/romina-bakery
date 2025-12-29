@@ -2,6 +2,20 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+
+/* ============================================================
+   PLACEHOLDERS (EXTEND)
+============================================================ */
+
+%btn-base {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: map.get($radius, lg);
+    @include transition(background-color $trans-rapida, color .22s ease, transform .15s ease);
+}
+
 /* ============================================================
    BUTTONS
 ============================================================ */
@@ -10,20 +24,15 @@
 button,
 input[type="submit"],
 .footer-subscribe .newsletter button {
-    background: $color-pastel !important;
+    @extend %btn-base;
+    background: color(pastel) !important;
     color: #2b190f !important;
-    border: none;
-    border-radius: map-get($radius, lg);
-    padding: 8px 16px;
-    font-size: 15px;
-    cursor: pointer;
-    @include transition(background-color $trans-rapida, color .22s ease, transform .15s ease);
 }
 
 .btn-pastel:hover,
 button:hover,
 input[type="submit"]:hover {
-    background: $color-pastel-hover !important;
+    background: color(pastel-hover) !important;
     color: #fff !important;
     transform: translateY(-2px);
 }
@@ -35,24 +44,24 @@ input[type="submit"]:hover {
 .card {
     border: none;
     border-radius: 12px;
+    overflow: hidden;
     @include shadow(suave);
     @include transition(transform .28s ease, box-shadow .28s ease);
-    overflow: hidden;
-}
 
-.card:hover {
-    transform: translateY(-6px);
-    @include shadow(hover);
+    &:hover {
+        transform: translateY(-6px);
+        @include shadow(hover);
+    }
 }
 
 .card-title {
     font-size: 24px;
-    color: $color-titulo;
+    color: color(titulo);
 }
 
 .card-text {
     font-size: 14px;
-    color: $color-texto;
+    color: color(texto);
 }
 
 /* ============================================================
@@ -73,13 +82,18 @@ input[type="submit"]:hover {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
+    height: 100%;
     @include shadow(suave);
     @include transition(transform .28s ease, box-shadow .28s ease);
-    height: 100%;
 
-    img {
+    >picture {
         width: 100%;
-        aspect-ratio: 16/11;
+        display: block;
+    }
+
+    >picture>img {
+        width: 100%;
+        height: 220px;
         object-fit: cover;
         display: block;
         border-radius: 8px 8px 0 0;
@@ -99,12 +113,12 @@ input[type="submit"]:hover {
     .card-title {
         font-size: 20px;
         margin: 8px 0 4px;
-        color: $color-titulo;
+        color: color(titulo);
     }
 
     .card-text {
         font-size: 15px;
-        color: $color-texto;
+        color: color(texto);
         line-height: 1.5;
         margin-bottom: 8px;
     }
@@ -117,13 +131,14 @@ input[type="submit"]:hover {
     }
 }
 
+
 /* RESPONSIVE PRODUCT CARDS */
 @include respond-max(992px) {
     .product-card-mini {
         max-width: 320px;
 
         img {
-            aspect-ratio: 16/10;
+            aspect-ratio: 16 / 10;
         }
     }
 }
@@ -132,7 +147,6 @@ input[type="submit"]:hover {
     .product-card-mini {
         width: calc(100% - 48px);
         max-width: 100%;
-        margin: 0 auto;
 
         img {
             height: 210px;
@@ -142,7 +156,7 @@ input[type="submit"]:hover {
 }
 
 /* ============================================================
-   SLIDER
+   SLIDER (CSS OK — NO TOCAR)
 ============================================================ */
 
 .slider-wrap {
@@ -161,10 +175,10 @@ input[type="submit"]:hover {
 .slider-track {
     display: flex;
     gap: 20px;
+    align-items: stretch;
+    padding: 6px 0;
     will-change: transform;
     transition: transform .36s cubic-bezier(.22, .9, .32, 1);
-    padding: 6px 0;
-    align-items: stretch;
 }
 
 .slide {
@@ -179,16 +193,16 @@ input[type="submit"]:hover {
     width: 44px;
     height: 44px;
     border-radius: 8px;
-    cursor: pointer;
     display: inline-grid;
     place-items: center;
+    cursor: pointer;
     @include shadow(suave);
     @include transition(transform .12s ease);
-}
 
-.slider-btn:hover {
-    transform: translateY(-3px);
-    @include shadow(hover);
+    &:hover {
+        transform: translateY(-3px);
+        @include shadow(hover);
+    }
 }
 
 .slider-dots {
@@ -207,163 +221,239 @@ input[type="submit"]:hover {
     cursor: pointer;
 
     &.active {
-        background: $color-pastel;
+        background: color(pastel);
     }
 }
 
 /* ============================================================
-   TEAM CARD
+   PLACEHOLDERS (EXTEND)
 ============================================================ */
 
-.team-card-mini {
-    position: relative;
-    width: 100%;
-    max-width: 280px;
-    background: #fff;
-    border-radius: 14px;
-    padding: 22px 18px;
-    text-align: center;
+%btn-base {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: map.get($radius, lg);
+    @include transition(background-color $trans-rapida, color .22s ease, transform .15s ease);
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.btn-pastel,
+button,
+input[type="submit"],
+.footer-subscribe .newsletter button {
+    @extend %btn-base;
+    background: color(pastel) !important;
+    color: #2b190f !important;
+}
+
+.btn-pastel:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: color(pastel-hover) !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   GENERIC CARD STYLES
+============================================================ */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
     @include shadow(suave);
     @include transition(transform .28s ease, box-shadow .28s ease);
 
-    img {
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin: 0 auto 14px;
-        display: block;
-        @include shadow(suave);
-    }
-
-    .name {
-        font-size: 20px;
-        color: $color-titulo;
-        margin-bottom: 6px;
-    }
-
-    .role {
-        font-size: 14px;
-        color: #a07b5c;
-        margin-bottom: 10px;
-    }
-
-    .bio {
-        font-size: 14px;
-        color: $color-texto;
-        line-height: 1.45;
+    &:hover {
+        transform: translateY(-6px);
+        @include shadow(hover);
     }
 }
 
-/* Ribbon decorativa */
-.team-ribbon {
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: $color-pastel;
-    padding: 4px 18px;
-    font-family: $font-brand;
-    font-size: 20px;
-    color: #fff;
-    border-radius: 50px;
-    @include shadow(suave);
+.card-title {
+    font-size: 24px;
+    color: color(titulo);
+}
+
+.card-text {
+    font-size: 14px;
+    color: color(texto);
 }
 
 /* ============================================================
-   CONTACT FORM STYLES
+   PRODUCT CARD MINI
 ============================================================ */
 
-.contacto input.form-control,
-.contacto textarea.form-control {
-    background: $color-fondo;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 12px 16px;
-    border-radius: 10px;
-    @include transition(.3s ease);
+.productos-grid {
+    align-items: start;
 }
 
-.contacto input.form-control:focus,
-.contacto textarea.form-control:focus {
-    border-color: $color-pastel;
-    box-shadow: 0 0 8px rgba(255, 182, 185, 0.4);
-}
-
-.contacto label.form-label {
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.contacto button[type="submit"] {
-    font-size: 16px;
-    border-radius: 10px;
-}
-
-/* ============================================================
-   CATEGORY HELPERS
-============================================================ */
-
-.hc-deco {
-    width: 64px;
-    height: 2px;
-    margin: 10px auto 14px;
-    border-radius: 2px;
-    background: linear-gradient(90deg,
-            rgba(168, 136, 106, 0.9),
-            rgba(255, 182, 185, 0.9));
-    box-shadow: 0 3px 8px rgba(168, 136, 106, 0.06);
-}
-
-.hero-compact {
-    padding: 36px 0 32px;
-    text-align: center;
-    background: transparent;
-
-    .hero-compact-inner {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 8px 16px;
-    }
-}
-
-.hc-subtitle {
-    margin: 6px auto 18px;
-    max-width: 680px;
-    color: rgba(26, 27, 31, 0.9);
-}
-
-/* ============================================================
-   UTILITIES
-============================================================ */
-
-.visually-hidden {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+.product-card-mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    height: 100%;
+    @include shadow(suave);
+    @include transition(transform .28s ease, box-shadow .28s ease);
+
+    >picture {
+        width: 100%;
+        display: block;
+    }
+
+    >picture>img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        gap: 12px;
+        text-align: center;
+        flex: 1 1 auto;
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin: 8px 0 4px;
+        color: color(titulo);
+    }
+
+    .card-text {
+        font-size: 15px;
+        color: color(texto);
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
+    .card-btn {
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+    }
 }
 
-/* Sticky elements reset */
-.sticky,
-.sticky-top,
-.sticky-sidebar {
-    position: static !important;
+
+/* RESPONSIVE PRODUCT CARDS */
+@include respond-max(992px) {
+    .product-card-mini {
+        max-width: 320px;
+
+        img {
+            aspect-ratio: 16 / 10;
+        }
+    }
 }
 
-/* Correcciones de aside */
-.post-content aside .card,
-.post-content aside .product-card-mini,
-.post-content aside .team-card-mini {
-    position: relative !important;
-    margin-bottom: 18px;
+@include respond-max(768px) {
+    .product-card-mini {
+        width: calc(100% - 48px);
+        max-width: 100%;
+
+        img {
+            height: 210px;
+            aspect-ratio: auto;
+        }
+    }
 }
 
-.post-content {
-    padding-bottom: 24px;
-    overflow: visible;
+/* ============================================================
+   SLIDER (CSS OK — NO TOCAR)
+============================================================ */
+
+.slider-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-viewport {
+    overflow: hidden;
+    width: 100%;
+    outline: none;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    padding: 6px 0;
+    will-change: transform;
+    transition: transform .36s cubic-bezier(.22, .9, .32, 1);
+}
+
+.slide {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-btn {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    @include shadow(suave);
+    @include transition(transform .12s ease);
+
+    &:hover {
+        transform: translateY(-3px);
+        @include shadow(hover);
+    }
+}
+
+.slider-dots {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(26, 27, 31, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+
+    &.active {
+        background: color(pastel);
+    }
+}
+
+.product-card-mini picture {
+    display: block;
+}
+
+.product-card-mini picture img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }

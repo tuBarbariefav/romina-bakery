@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Romina Bakery — Sobre nosotros</title>
 
+  <meta name="description"
+    content="Conocé la historia de Romina Bakery, nuestro equipo y la pasión por la repostería artesanal.">
+
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&family=Anton&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&family=Anton&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,87 +22,95 @@
 </head>
 
 <body>
-<input type="checkbox" id="nav-toggle" class="nav-toggle">
-<label for="nav-toggle" class="hamburger">
-    <span></span>
-</label>
 
-  <!-- ========================================================
-       HEADER + NAVBAR (VERSIÓN FINAL Y CORRECTA)
-  =========================================================== -->
+  <!-- ================= HEADER ================= -->
   <header class="site-header" role="banner">
     <nav class="navbar navbar-expand-lg container">
 
-      <!-- LOGO -->
-      <a href="index.html" class="navbar-brand d-flex align-items-center text-decoration-none" aria-label="Ir a inicio">
-        <img src="/assets/img/logo-bakery.png" alt="Romina Bakery" width="64" height="64">
-        <h1 class="ms-2 mb-0">Romina Bakery</h1>
+      <a href="../index.html" class="navbar-brand site-brand" aria-label="Ir al inicio">
+        <img src="../assets/img/logo-bakery.png" alt="Romina Bakery" width="64" height="64">
+        <span class="site-title ms-2">Romina Bakery</span>
       </a>
 
-      <!-- BOTÓN HAMBURGUESA -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+        aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- MENÚ -->
       <div class="collapse navbar-collapse justify-content-end" id="menuNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="../index.html" data-cat="home">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="productos.html" data-cat="productos">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html" data-cat="blog">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobre_mi.html" data-cat="sobre">Sobre nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html" data-cat="contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sobre_mi.html">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
 
     </nav>
   </header>
 
-  <!-- MAIN -->
+  <!-- ================= MAIN ================= -->
   <main>
 
-    <!-- ABOUT INTRO SECTION -->
+    <!-- TÍTULO PRINCIPAL SEO -->
+    <section class="py-5">
+      <div class="container text-center">
+        <h1>Sobre Romina Bakery</h1>
+        <p class="small">
+          Conocé nuestra historia, nuestro equipo y la pasión detrás de cada creación.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT INTRO -->
     <section class="about-intro py-5">
       <div class="container">
-        <div class="row align-items-center about-intro-inner">
+        <div class="row align-items-center">
 
-          <!-- Texto -->
           <div class="col-lg-6 mb-4 mb-lg-0 about-text">
-            <h2 class="h2">Sobre Romina Bakery</h2>
+            <h2 class="h2">Nuestra filosofía</h2>
             <p>
               Romina Bakery nace de la pasión por la repostería casera y los sabores tradicionales.
               Nos especializamos en pasteles personalizados, cupcakes y postres para todo tipo de
-              celebraciones. Trabajamos con ingredientes de calidad y atención al detalle.
+              celebraciones, trabajando siempre con ingredientes de calidad y atención al detalle.
             </p>
           </div>
 
-          <!-- Imagen -->
           <div class="col-lg-6 about-image">
-            <img src="../assets/img/sobre-nosotros-dos.jpg" class="img-fluid rounded shadow" alt="Imagen de la pastelería" loading="lazy">
+            <picture>
+              <source srcset="../assets/img/sobre-nosotros-dos.webp" type="image/webp">
+              <img src="../assets/img/sobre-nosotros-dos.jpg" class="img-fluid rounded shadow"
+                alt="Pastelería artesanal Romina Bakery" loading="lazy" width="700" height="500">
+            </picture>
           </div>
+
 
         </div>
       </div>
     </section>
 
-    <!-- OUR STORY SECTION -->
+    <!-- HISTORIA -->
     <section class="about-story py-5">
       <div class="container">
-        <div class="row align-items-center about-story-inner">
+        <div class="row align-items-center">
 
-          <!-- Imagen izquierda -->
           <div class="col-lg-6 mb-4 mb-lg-0 about-kitchen">
-            <img src="../assets/img/sobre-nosotros-tres.jpg" class="img-fluid rounded shadow" alt="Cocina Romina Bakery" loading="lazy">
+            <picture>
+              <source srcset="../assets/img/sobre-nosotros-tres.webp" type="image/webp">
+              <img src="../assets/img/sobre-nosotros-tres.jpg" class="img-fluid rounded shadow"
+                alt="Cocina de Romina Bakery" loading="lazy" width="700" height="500">
+            </picture>
           </div>
 
-          <!-- Texto derecha -->
+
           <div class="col-lg-6 about-history">
-            <h3 class="h3">Nuestra historia</h3>
+            <h2 class="h3">Nuestra historia</h2>
             <p>
               Empezamos como un pequeño proyecto familiar y hoy atendemos pedidos para fiestas y eventos.
               Cada receta se prueba y mejora hasta lograr la textura y el sabor que nos identifica.
-              Además ofrecemos asesoría para diseños personalizados según tu celebración.
+              También ofrecemos asesoría para diseños personalizados.
             </p>
           </div>
 
@@ -104,75 +118,84 @@
       </div>
     </section>
 
-    <!-- TEAM SECTION -->
+    <!-- EQUIPO -->
     <section class="team py-5">
       <div class="container">
         <h2 class="text-center mb-5">Nuestro equipo</h2>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 team-grid justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
 
-          <!-- Miembro 1 -->
           <article class="col d-flex justify-content-center">
             <div class="team-card-mini">
               <span class="team-ribbon">Pastelera</span>
-              <img src="../assets/img/pastelera-uno.jpg" alt="Pastelera Ana" loading="lazy">
-              <h4 class="name">Ana Gómez</h4>
+              <picture>
+                <source srcset="../assets/img/pastelera-uno.webp" type="image/webp">
+                <img src="../assets/img/pastelera-uno.jpg" alt="Ana Gómez, pastelera principal" loading="lazy"
+                  width="400" height="400">
+              </picture>
+
+              <h3 class="name">Ana Gómez</h3>
               <p class="role fw-bold">Pastelera principal</p>
-              <p class="bio">Crea los diseños personalizados y supervisa la calidad de cada pedido.</p>
+              <p class="bio">Crea los diseños personalizados y supervisa cada pedido.</p>
             </div>
           </article>
 
-          <!-- Miembro 2 -->
           <article class="col d-flex justify-content-center">
             <div class="team-card-mini">
               <span class="team-ribbon">Decoradora</span>
-              <img src="../assets/img/pastelera-dos.jpg" alt="Pastelera Laura" loading="lazy">
-              <h4 class="name">Laura Pérez</h4>
+              <picture>
+                <source srcset="../assets/img/pastelera-dos.webp" type="image/webp">
+                <img src="../assets/img/pastelera-dos.jpg" alt="Laura Pérez, decoradora" loading="lazy" width="400"
+                  height="400">
+              </picture>
+
+              <h3 class="name">Laura Pérez</h3>
               <p class="role fw-bold">Decoradora</p>
-              <p class="bio">Experta en técnicas de glaseado y decoración artesanal.</p>
+              <p class="bio">Especialista en glaseado y decoración artesanal.</p>
             </div>
           </article>
 
-          <!-- Miembro 3 -->
           <article class="col d-flex justify-content-center">
             <div class="team-card-mini">
-              <span class="team-ribbon">Chef de recetas</span>
-              <img src="../assets/img/pastelera-tres.jpg" alt="Pastelera Marta" loading="lazy">
-              <h4 class="name">Marta Ruiz</h4>
+              <span class="team-ribbon">Chef</span>
+              <picture>
+                <source srcset="../assets/img/pastelera-tres.webp" type="image/webp">
+                <img src="../assets/img/pastelera-tres.jpg" alt="Marta Ruiz, chef de recetas" loading="lazy" width="400"
+                  height="400">
+              </picture>
+
+              <h3 class="name">Marta Ruiz</h3>
               <p class="role fw-bold">Chef de recetas</p>
-              <p class="bio">Investiga sabores y crea nuevas recetas tradicionales.</p>
+              <p class="bio">Desarrolla nuevas recetas y sabores tradicionales.</p>
             </div>
           </article>
 
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-layout">
 
-      <!-- IZQUIERDA: SOLO LOGO -->
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo d-flex align-items-center text-decoration-none" aria-label="Inicio Romina Bakery">
+        <a href="../index.html" class="footer-logo d-flex align-items-center text-decoration-none"
+          aria-label="Inicio Romina Bakery">
           <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="48" height="48">
           <span class="ms-2">Romina Bakery</span>
         </a>
       </div>
 
-      <!-- CENTRO: SUSCRIPCIÓN -->
       <div class="footer-subscribe">
-        <form action="#" class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
+        <form class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
           <label for="email-news" class="visually-hidden">Correo electrónico</label>
-          <input id="email-news" type="email" name="email" placeholder="Tu correo" required>
+          <input id="email-news" type="email" placeholder="Tu correo" required>
           <button type="submit">Suscribirse</button>
         </form>
       </div>
 
-      <!-- DERECHA: REDES -->
       <div class="footer-social">
         <h4>Síguenos</h4>
         <ul class="social-list list-unstyled">
@@ -186,13 +209,12 @@
 
     <div class="footer-bottom">
       <div class="container text-center">
-        <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
+        <p>© <time datetime="2025">2025</time> Romina Bakery. Todos los derechos reservados.</p>
       </div>
-    </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

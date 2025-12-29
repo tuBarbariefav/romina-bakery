@@ -4,154 +4,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romina Bakery — Contacto</title>
+  <title>Romina Bakery | Contacto</title>
+
+  <meta name="description"
+    content="Contactá a Romina Bakery para reservar pasteles personalizados o recibir asesoramiento en repostería artesanal.">
 
   <!-- Tipografías -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&family=Anton&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&display=swap"
     rel="stylesheet">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- CSS principal -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <!-- CSS del formulario -->
   <link rel="stylesheet" href="../assets/css/contacto.css">
-
 </head>
 
 <body>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="hamburger"><span></span></label>
 
-   <!-- ========================================================
-       HEADER + NAVBAR (VERSIÓN FINAL Y CORRECTA)
-  =========================================================== -->
+  <!-- ================= HEADER ================= -->
   <header class="site-header" role="banner">
     <nav class="navbar navbar-expand-lg container">
 
-      <!-- LOGO -->
-      <a href="index.html" class="navbar-brand d-flex align-items-center text-decoration-none" aria-label="Ir a inicio">
-        <img src="/assets/img/logo-bakery.png" alt="Romina Bakery" width="64" height="64">
-        <h1 class="ms-2 mb-0">Romina Bakery</h1>
+      <a href="../index.html" class="navbar-brand site-brand" aria-label="Ir al inicio">
+        <img src="../assets/img/logo-bakery.png" alt="Romina Bakery" width="64" height="64">
+        <span class="site-title ms-2">Romina Bakery</span>
       </a>
 
-      <!-- BOTÓN HAMBURGUESA -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+        aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- MENÚ -->
       <div class="collapse navbar-collapse justify-content-end" id="menuNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="../index.html" data-cat="home">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="productos.html" data-cat="productos">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html" data-cat="blog">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobre_mi.html" data-cat="sobre">Sobre nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html" data-cat="contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre_mi.html">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        </ul>
       </div>
 
     </nav>
   </header>
 
-  <!-- MAIN -->
+  <!-- ================= MAIN ================= -->
   <main class="py-5">
-    <section class="contacto">
+
+    <section class="contacto" aria-labelledby="contacto-title">
       <div class="container">
+
+        <header class="text-center mb-4">
+          <h1 id="contacto-title">Contacto</h1>
+          <p class="small">¿Querés reservar tu pastel o recibir asesoría personalizada?</p>
+        </header>
 
         <div class="row g-5">
 
-          <!-- INFORMACIÓN -->
-          <div class="col-12 col-lg-6">
-            <h2 class="mb-3">Contacto</h2>
+          <!-- INFO -->
+          <aside class="col-12 col-lg-6" aria-label="Datos de contacto">
             <p>
-              ¿Quieres reservar tu pastel o recibir asesoría personalizada? Escríbenos o llámanos.
+              Escribinos o llamanos, estamos felices de ayudarte.
             </p>
 
-            <h3 class="mt-4">Redes y correo</h3>
+            <h2 class="h5 mt-4">Datos de contacto</h2>
             <ul class="contact-list list-unstyled mt-3">
-              <li><strong>Tel:</strong> <a href="tel:+346420000000">+346420000000</a></li>
+              <li><strong>Tel:</strong> <a href="tel:+346420000000">+34 642 000 000</a></li>
               <li><strong>Email:</strong> <a href="mailto:pedidos@rominabakery.com">pedidos@rominabakery.com</a></li>
               <li><strong>Instagram:</strong> <a href="#">@rominabakery</a></li>
               <li><strong>Facebook:</strong> <a href="#">Romina Bakery</a></li>
             </ul>
 
             <p class="mt-4"><strong>Horario:</strong> Lun–Vie 9:00–18:00 · Sáb 9:00–14:00</p>
-          </div>
+          </aside>
 
-          <!-- FORMULARIO -->
-          <form action="#" method="post" aria-label="Formulario de contacto">
+          <!-- FORM -->
+          <section class="col-12 col-lg-6" aria-label="Formulario de contacto">
+            <form action="#" method="post">
 
-            <div class="mb-3">
-              <label for="name" class="form-label">Nombre completo</label>
-              <input id="name" name="name" type="text" class="form-control" placeholder="Tu nombre" required>
-            </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre completo</label>
+                <input id="name" name="name" type="text" class="form-control" placeholder="Tu nombre" required>
+              </div>
 
-            <div class="mb-3">
-              <label for="phone" class="form-label">Teléfono</label>
-              <input id="phone" name="phone" type="tel" class="form-control" placeholder="+346420000000" required>
-            </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Teléfono</label>
+                <input id="phone" name="phone" type="tel" class="form-control" placeholder="+34 642 000 000" required>
+              </div>
 
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input id="email" name="email" type="email" class="form-control" placeholder="tu@email.com" required>
-            </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input id="email" name="email" type="email" class="form-control" placeholder="tu@email.com" required>
+              </div>
 
-            <div class="mb-3">
-              <label for="message" class="form-label">Mensaje</label>
-              <textarea id="message" name="message" rows="4" class="form-control"
-                placeholder="Cuéntanos qué necesitas..." required></textarea>
-            </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea id="message" name="message" rows="4" class="form-control"
+                  placeholder="Cuéntanos qué necesitas..." required></textarea>
+              </div>
 
-            <div class="form-check mb-3">
-              <input id="callme" name="callme" type="checkbox" class="form-check-input">
-              <label for="callme" class="form-check-label">Solicitar llamada de asesoría</label>
-            </div>
+              <div class="form-check mb-3">
+                <input id="callme" name="callme" type="checkbox" class="form-check-input">
+                <label for="callme" class="form-check-label">Solicitar llamada de asesoría</label>
+              </div>
 
-            <button type="submit" class="btn btn-pastel w-100 py-2">Enviar solicitud</button>
+              <button type="submit" class="btn btn-pastel w-100 py-2">
+                Enviar solicitud
+              </button>
 
-          </form>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-layout">
+
       <div class="footer-brand">
-        <a href="../index.html" class="footer-logo d-flex align-items-center"><img src="../assets/img/logo-bakery.png"
-            width="48"><span class="ms-2">Romina Bakery</span></a>
+        <a href="../index.html" class="d-flex align-items-center text-decoration-none">
+          <img src="../assets/img/logo-bakery.png" alt="Logo Romina Bakery" width="48">
+          <span class="ms-2">Romina Bakery</span>
+        </a>
       </div>
 
       <div class="footer-subscribe">
         <form class="newsletter d-flex gap-2">
-          <input type="email" placeholder="Tu correo" required>
+          <label for="newsletter-email" class="visually-hidden">Correo electrónico</label>
+          <input id="newsletter-email" type="email" placeholder="Tu correo" required>
           <button type="submit">Suscribirse</button>
         </form>
       </div>
 
       <div class="footer-social">
-        <h4>Síguenos</h4>
+        <h4>Seguinos</h4>
         <ul class="list-unstyled">
           <li><a href="#">Instagram</a></li>
           <li><a href="#">Facebook</a></li>
           <li><a href="#">TikTok</a></li>
         </ul>
       </div>
+
     </div>
 
-    <div class="footer-bottom mt-4">
-      <div class="container text-center">
-        <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
-      </div>
+    <div class="footer-bottom text-center">
+      <p>© <time datetime="2025">2025</time> Romina Bakery. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Form JS -->
   <script src="../assets/js/contacto.js"></script>
 
 </body>

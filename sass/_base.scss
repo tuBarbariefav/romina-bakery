@@ -4,6 +4,7 @@
 /* ============================================================
    RESET + BASE GLOBAL
 ============================================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,9 +17,9 @@ body {
 }
 
 body {
-    background: $color-fondo;
+    background: color(fondo);
     font-family: $font-base;
-    color: $color-texto;
+    color: color(texto);
     font-size: 15px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -33,21 +34,24 @@ body {
 /* ============================================================
    IMÁGENES
 ============================================================ */
+
 img {
     max-width: 100%;
     display: block;
     border-radius: 6px;
-    @include transition(transform .4s ease, box-shadow .3s ease);
-}
 
-img:hover {
-    transform: scale(1.03);
-    box-shadow: $shadow-hover;
+    @include transition(transform .4s ease, box-shadow .3s ease);
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: $shadow-hover;
+    }
 }
 
 /* ============================================================
    HEADINGS
 ============================================================ */
+
 h1,
 h2,
 h3,
@@ -61,7 +65,7 @@ h6,
 .h5,
 .h6 {
     font-family: $font-brand;
-    color: $color-titulo;
+    color: color(titulo);
     font-weight: 700;
 }
 
@@ -92,6 +96,7 @@ h6,
 /* ============================================================
    ANIMACIONES
 ============================================================ */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -123,8 +128,9 @@ article {
 }
 
 /* ============================================================
-   EXPORTAR VARIABLES A :root (para JS / Bootstrap)
+   EXPORTAR VARIABLES A :root (JS / Bootstrap)
 ============================================================ */
+
 :root {
     --color-fondo: #{$color-fondo};
     --color-titulo: #{$color-titulo};
@@ -138,13 +144,13 @@ article {
 }
 
 /* ============================================================
-   UTILIDADES GLOBALS
+   UTILIDADES GLOBALES
 ============================================================ */
 
 /* Hover dorado para enlaces en About/Sobre nosotros */
 .about a:hover,
 .sobre-nosotros a:hover {
-    color: $color-titulo !important;
+    color: color(titulo) !important;
 }
 
 /* Links negros forzados en páginas de contacto */
@@ -160,7 +166,7 @@ article {
 .contacto .contact-link,
 .contacto a[href^="tel:"],
 .contacto a[href^="mailto:"] {
-    color: $color-texto !important;
+    color: color(texto) !important;
     text-decoration: none !important;
 }
 
@@ -168,6 +174,6 @@ article {
 .section-contacto a:hover,
 .about a:hover,
 .sobre-nosotros a:hover {
-    color: $color-titulo !important;
+    color: color(titulo) !important;
     text-decoration: underline !important;
 }

@@ -1,11 +1,12 @@
-@use 'variables' as *;
+@use "sass:map";
+@use "variables" as *;
 
 // ===============================================
 // MIXINS — ROMINA BAKERY
 // Archivo optimizado, profesional y escalable
 // ===============================================
 
-// ⭐ Transición reutilizable (acepta una o varias)
+// ⭐ Transición reutilizable (una o varias)
 @mixin transition($transitions...) {
     transition: $transitions;
 }
@@ -35,15 +36,4 @@
     @else if $type ==hover {
         box-shadow: $shadow-hover;
     }
-}
-
-// ⭐ Acceso rápido a colores desde el map
-// Uso: color: color-map(titulo);
-@function color-map($key) {
-    @if map-has-key($colors, $key) {
-        @return map-get($colors, $key);
-    }
-
-    @warn "La clave `#{$key}` no existe en el mapa `$colors`.";
-    @return null;
 }

@@ -3,11 +3,13 @@
 // Limpio, escalable y profesional
 // ===============================================
 
+@use "sass:map";
+
 // 🎨 Colores principales
 $color-fondo: #ffefdf;
-$color-titulo: #a8886a; // dorado suave
+$color-titulo: #a8886a;
 $color-texto: #1a1b1f;
-$color-pastel: #ffb6b9; // rosa pastel
+$color-pastel: #ffb6b9;
 $color-pastel-hover: #e8a7aa;
 
 // 🌫 Sombras
@@ -24,10 +26,8 @@ $max-width: 1200px;
 $font-base: "Raleway", sans-serif;
 $font-brand: "Great Vibes", cursive;
 
-
 // ===============================================
-// PALETA COMO MAP (pedido por la consigna del curso)
-// Esto NO cambia tu diseño, solo te suma puntos.
+// PALETA COMO MAP (pedido por la consigna)
 // ===============================================
 
 $colors: (
@@ -38,8 +38,13 @@ $colors: (
     pastel-hover: $color-pastel-hover
 );
 
+// Helper function → evita map.get repetido en todo el proyecto
+@function color($key) {
+    @return map.get($colors, $key);
+}
+
 // ===============================================
-// ESPACIADOS Y RADIOS (opcional, profesional)
+// ESPACIADOS Y RADIOS
 // ===============================================
 
 $space: (

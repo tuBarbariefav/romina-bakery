@@ -9,17 +9,18 @@
 .site-footer {
     background: #2b190f;
     color: #fff;
-    padding: 20px 0 0 0;
+    padding: 20px 0 0;
     position: relative;
     z-index: 5;
 
     a {
-        color: $color-pastel !important;
+        color: color(pastel) !important;
         text-decoration: underline;
+
         @include transition(color $trans-rapida);
 
         &:hover {
-            color: color.adjust($color-pastel, $lightness: 8%);
+            color: color.adjust(color(pastel), $lightness: 8%);
         }
     }
 }
@@ -47,7 +48,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: $color-pastel;
+    color: color(pastel);
     text-decoration: none;
 
     img {
@@ -88,16 +89,17 @@
     }
 
     button {
-        background: $color-pastel !important;
-        color: $color-texto !important;
+        background: color(pastel) !important;
+        color: color(texto) !important;
         border: none;
         padding: 8px 12px;
         border-radius: 8px;
         cursor: pointer;
+
         @include transition(background $trans-rapida);
 
         &:hover {
-            background: $color-pastel-hover !important;
+            background: color(pastel-hover) !important;
         }
     }
 }
@@ -115,8 +117,8 @@
 
     h4 {
         font-family: $font-brand;
-        color: $color-titulo;
-        margin: 0 0 4px 0;
+        color: color(titulo);
+        margin: 0 0 4px;
         font-size: 20px;
     }
 
@@ -130,10 +132,10 @@
         }
 
         a {
-            color: $color-pastel !important;
+            color: color(pastel) !important;
 
             &:hover {
-                color: color.adjust($color-pastel, $lightness: 10%);
+                color: color.adjust(color(pastel), $lightness: 10%);
             }
         }
     }
@@ -144,21 +146,20 @@
 ================================ */
 
 .footer-bottom {
-    background: $color-pastel;
-    color: $color-texto;
+    background: color(pastel);
+    color: color(texto);
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
     border-top: 1px solid rgba(0, 0, 0, 0.03);
-    margin-top: 0;
     position: relative;
     z-index: 10;
 
     a {
-        color: $color-texto !important;
+        color: color(texto) !important;
 
         &:hover {
-            color: color.adjust($color-texto, $lightness: -10%);
+            color: color.adjust(color(texto), $lightness: -10%);
         }
     }
 }
@@ -168,7 +169,6 @@
 ================================ */
 
 @include respond-max(768px) {
-
     .footer-layout {
         flex-direction: column;
         text-align: center;

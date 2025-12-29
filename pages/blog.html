@@ -1,316 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romina Bakery — Blog</title>
+  <title>Romina Bakery | Blog de recetas y consejos</title>
+  <meta name="description"
+    content="Explorá el blog de Romina Bakery con recetas, trucos y consejos de repostería artesanal.">
 
-  <!-- Fonts-->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&family=Anton&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap-->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!--CSS-->
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="hamburger" aria-label="Abrir menú"><span></span></label>
 
-   <!-- ========================================================
-       HEADER + NAVBAR (VERSIÓN FINAL Y CORRECTA)
-  =========================================================== -->
-  <header class="site-header" role="banner">
+<body>
+
+  <header class="site-header">
     <nav class="navbar navbar-expand-lg container">
 
-      <!-- LOGO -->
-      <a href="index.html" class="navbar-brand d-flex align-items-center text-decoration-none" aria-label="Ir a inicio">
-        <img src="/assets/img/logo-bakery.png" alt="Romina Bakery" width="64" height="64">
-        <h1 class="ms-2 mb-0">Romina Bakery</h1>
+      <a href="../index.html" class="navbar-brand d-flex align-items-center">
+        <img src="../assets/img/logo-bakery.png" width="64" height="64" alt="Romina Bakery logo">
+        <span class="site-title ms-2">Romina Bakery</span>
       </a>
 
-      <!-- BOTÓN HAMBURGUESA -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- MENÚ -->
       <div class="collapse navbar-collapse justify-content-end" id="menuNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="../index.html" data-cat="home">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="productos.html" data-cat="productos">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html" data-cat="blog">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobre_mi.html" data-cat="sobre">Sobre nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html" data-cat="contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre_mi.html">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
       </div>
-
     </nav>
   </header>
-  <!-- MAIN -->
-  <main class="py-5" role="main">
-    <!-- BLOG: SLIDER DE ENTRADAS -->
-<section id="blog-slider" class="posts seccion-recetas py-5">
-  <div class="container">
-    <header class="mb-4 text-center">
-      <h2 class="h3">Últimas entradas</h2>
-      <p class="small">Ideas, recetas y trucos desde nuestra cocina.</p>
-    </header>
 
-    <div class="slider-wrap">
-      <button class="slider-btn prev" aria-label="Entrada anterior">&larr;</button>
+  <main class="py-5">
 
-      <div class="slider-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Entradas del blog">
-        <div class="slider-track">
-          <!-- Slide 1 -->
-          <article class="slide">
-            <div class="card product-card-mini">
-              <img src="../assets/img/pastel-tres.jpg" alt="Pastel clásico" loading="lazy">
-              <div class="card-body text-center">
-                <h3 class="card-title h5">Receta: Pastel clásico</h3>
-                <p class="card-text">Ingredientes, técnica y tips para un bizcocho perfecto.</p>
-                <a href="post_pastel_clasico.html" class="btn btn-pastel card-btn">Ver más</a>
-              </div>
+    <section id="blog-slider" class="posts seccion-recetas py-5">
+      <div class="container">
+
+        <div class="text-center mb-4">
+          <h1>Blog de Romina Bakery</h1>
+          <p class="small">Ideas, recetas y trucos desde nuestra cocina.</p>
+        </div>
+
+        <div class="slider-wrap">
+          <button class="slider-btn prev" aria-label="Entrada anterior">←</button>
+
+          <div class="slider-viewport" tabindex="0" aria-roledescription="carousel">
+            <div class="slider-track">
+
+              <!-- SLIDES -->
+
+              <!-- 1 -->
+              <article class="slide">
+                <div class="card product-card-mini">
+                  <picture>
+                    <source srcset="../assets/img/pastel-tres.webp" type="image/webp">
+                    <img src="../assets/img/pastel-tres.jpg" width="600" height="400" loading="lazy" decoding="async"
+                      alt="Receta de pastel clásico">
+                  </picture>
+                  <div class="card-body text-center">
+                    <h2 class="h5">Receta: Pastel clásico</h2>
+                    <p>Ingredientes, técnica y tips para un bizcocho perfecto.</p>
+                    <a href="post_pastel_clasico.html" class="btn btn-pastel">Ver más</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 2 -->
+              <article class="slide">
+                <div class="card product-card-mini">
+                  <picture>
+                    <source srcset="../assets/img/cupcake-portada.webp" type="image/webp">
+                    <img src="../assets/img/cupcake-portada.jpg" width="600" height="400" loading="lazy"
+                      decoding="async" alt="Cupcakes de vainilla">
+                  </picture>
+                  <div class="card-body text-center">
+                    <h2 class="h5">Cupcakes de vainilla</h2>
+                    <p>Receta y decoración paso a paso.</p>
+                    <a href="post_cupcakes_vainilla.html" class="btn btn-pastel">Ver más</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 3 -->
+              <article class="slide">
+                <div class="card product-card-mini">
+                  <picture>
+                    <source srcset="../assets/img/galleta-portada.webp" type="image/webp">
+                    <img src="../assets/img/galleta-portada.jpg" width="600" height="400" loading="lazy"
+                      decoding="async" alt="Galletas de mantequilla">
+                  </picture>
+                  <div class="card-body text-center">
+                    <h2 class="h5">Galletas de mantequilla</h2>
+                    <p>Textura crujiente perfecta.</p>
+                    <a href="post_galletas_mantequilla.html" class="btn btn-pastel">Ver más</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 4 -->
+              <article class="slide">
+                <div class="card product-card-mini">
+                  <picture>
+                    <source srcset="../assets/img/pastel-cuatro.webp" type="image/webp">
+                    <img src="../assets/img/pastel-cuatro.jpg" width="600" height="400" loading="lazy" decoding="async"
+                      alt="Pastel personalizado">
+                  </picture>
+                  <div class="card-body text-center">
+                    <h2 class="h5">Pasteles personalizados</h2>
+                    <p>Cómo encargar el diseño ideal.</p>
+                    <a href="post_encargos.html" class="btn btn-pastel">Ver más</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 5 -->
+              <article class="slide">
+                <div class="card product-card-mini">
+                  <picture>
+                    <source srcset="../assets/img/pastel-portada.webp" type="image/webp">
+                    <img src="../assets/img/pastel-portada.jpg" width="600" height="400" loading="lazy" decoding="async"
+                      alt="Sabores de temporada">
+                  </picture>
+                  <div class="card-body text-center">
+                    <h2 class="h5">Sabores de temporada</h2>
+                    <p>Qué elegir según la estación.</p>
+                    <a href="post_temporada.html" class="btn btn-pastel">Ver más</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 6 -->
+              <article class="slide">
+                <div class="card product-card-mini">
+                  <picture>
+                    <source srcset="../assets/img/pastel-dos.webp" type="image/webp">
+                    <img src="../assets/img/pastel-dos.jpg" width="600" height="400" loading="lazy" decoding="async"
+                      alt="Pastel edición premium">
+                  </picture>
+                  <div class="card-body text-center">
+                    <h2 class="h5">Edición premium</h2>
+                    <p>Detalles y presentación exclusiva.</p>
+                    <a href="post_premium.html" class="btn btn-pastel">Ver más</a>
+                  </div>
+                </div>
+              </article>
+
             </div>
-          </article>
+          </div>
 
-          <!-- Slide 2 -->
-          <article class="slide">
-            <div class="card product-card-mini">
-              <img src="../assets/img/cupcakes-destacados.jpg" alt="Cupcakes" loading="lazy">
-              <div class="card-body text-center">
-                <h3 class="card-title h5">Cupcakes de vainilla</h3>
-                <p class="card-text">Receta y decoración paso a paso para cupcakes esponjosos.</p>
-                <a href="post_cupcakes_vainilla.html" class="btn btn-pastel card-btn">Ver más</a>
-              </div>
-            </div>
-          </article>
+          <button class="slider-btn next" aria-label="Siguiente entrada">→</button>
+        </div>
 
-          <!-- Slide 3 -->
-          <article class="slide">
-            <div class="card product-card-mini">
-              <img src="../assets/img/galleta-portada.jpg" alt="Galletas" loading="lazy">
-              <div class="card-body text-center">
-                <h3 class="card-title h5">Galletas de mantequilla</h3>
-                <p class="card-text">Trucos para lograr la textura crujiente ideal.</p>
-                <a href="post_galletas_mantequilla.html" class="btn btn-pastel card-btn">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 4 -->
-          <article class="slide">
-            <div class="card product-card-mini">
-              <img src="../assets/img/pastel-cuatro.jpg" alt="Pastel personalizado" loading="lazy">
-              <div class="card-body text-center">
-                <h3 class="card-title h5">Cómo encargar un pastel personalizado</h3>
-                <p class="card-text">Guía para pedir tu diseño perfecto sin complicaciones.</p>
-                <a href="post_encargos.html" class="btn btn-pastel card-btn">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 5 -->
-          <article class="slide">
-            <div class="card product-card-mini">
-              <img src="../assets/img/pastel-portada.jpg" alt="Pastel temporada" loading="lazy">
-              <div class="card-body text-center">
-                <h3 class="card-title h5">Sabores de temporada</h3>
-                <p class="card-text">Qué sabores recomendamos según la estación y por qué funcionan.</p>
-                <a href="post_temporada.html" class="btn btn-pastel card-btn">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 6 -->
-          <article class="slide">
-            <div class="card product-card-mini">
-              <img src="../assets/img/pastel-dos.jpg" alt="Edición premium" loading="lazy">
-              <div class="card-body text-center">
-                <h3 class="card-title h5">Edición premium: detalles</h3>
-                <p class="card-text">Materiales, presentación y consejos para ediciones exclusivas.</p>
-                <a href="post_premium.html" class="btn btn-pastel card-btn">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-        </div> <!-- /.slider-track -->
-      </div> <!-- /.slider-viewport -->
-
-      <button class="slider-btn next" aria-label="Siguiente entrada">&rarr;</button>
-    </div> <!-- /.slider-wrap -->
-
-    <!-- Dots -->
-    <div class="slider-dots" aria-hidden="false" role="tablist"></div>
-  </div>
-</section>
-
+        <div class="slider-dots"></div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer-layout">
       <div class="footer-brand">
-        <a href="../index.html" class="footer-logo d-flex align-items-center text-decoration-none" aria-label="Inicio Romina Bakery">
-          <img src="../assets/img/logo-bakery.png" alt="Logotipo Romina Bakery" width="48" height="48">
+        <a href="../index.html" class="d-flex align-items-center">
+          <img src="../assets/img/logo-bakery.png" width="48" alt="Romina Bakery logo">
           <span class="ms-2">Romina Bakery</span>
         </a>
       </div>
-
-      <div class="footer-subscribe">
-        <form action="#" class="newsletter d-flex gap-2" aria-label="Suscripción al boletín">
-          <label for="email-news" class="visually-hidden">Correo electrónico</label>
-          <input id="email-news" type="email" name="email" placeholder="Tu correo" required>
-          <button type="submit">Suscribirse</button>
-        </form>
-      </div>
-
-      <div class="footer-social">
-        <h4>Síguenos</h4>
-        <ul class="social-list list-unstyled">
-          <li><a href="#" aria-label="Instagram Romina Bakery">Instagram</a></li>
-          <li><a href="#" aria-label="Facebook Romina Bakery">Facebook</a></li>
-          <li><a href="#" aria-label="TikTok Romina Bakery">TikTok</a></li>
-        </ul>
-      </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="container text-center">
-        <p class="mb-0">© 2025 Romina Bakery. Todos los derechos reservados.</p>
-      </div>
+    <div class="footer-bottom text-center">
+      <p>© <time datetime="2025">2025</time> Romina Bakery.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-(function(){
-  // Slider simple, sin dependencias
-  const track = document.querySelector('#blog-slider .slider-track');
-  const viewport = document.querySelector('#blog-slider .slider-viewport');
-  const slides = Array.from(track.children);
-  const prevBtn = document.querySelector('#blog-slider .slider-btn.prev');
-  const nextBtn = document.querySelector('#blog-slider .slider-btn.next');
-  const dotsWrap = document.querySelector('#blog-slider .slider-dots');
-
-  if(!track || slides.length===0) return;
-
-  // Determine slides per view based on width
-  function getSlidesPerView() {
-    const w = window.innerWidth;
-    if (w >= 992) return 3;
-    if (w >= 768) return 2;
-    return 1;
-  }
-
-  let spv = getSlidesPerView();
-  let currentIndex = 0; // index of first visible slide
-  let autoplayDelay = 4500;
-  let autoplayTimer = null;
-
-  // Build dots (one per "page")
-  function buildDots() {
-    dotsWrap.innerHTML = '';
-    const pages = Math.max(1, Math.ceil(slides.length / spv));
-    for (let i=0;i<pages;i++){
-      const dot = document.createElement('button');
-      dot.className = 'slider-dot';
-      dot.setAttribute('aria-label', 'Ir a página ' + (i+1));
-      dot.dataset.page = i;
-      dot.addEventListener('click', ()=> goToPage(i));
-      dotsWrap.appendChild(dot);
-    }
-    updateDots();
-  }
-
-  function updateDots(){
-    const pages = Math.max(1, Math.ceil(slides.length / spv));
-    const activePage = Math.floor(currentIndex / spv);
-    const dots = dotsWrap.querySelectorAll('.slider-dot');
-    dots.forEach((d,i)=> d.classList.toggle('active', i===activePage));
-  }
-
-  // Calculate slide width and set flex basis
-  function recalc() {
-    spv = getSlidesPerView();
-    const viewportWidth = viewport.clientWidth;
-    const gap = parseFloat(getComputedStyle(track).gap) || 20;
-    // slideWidth = (viewportWidth - gap*(spv-1)) / spv
-    const slideWidth = Math.floor((viewportWidth - gap * (spv - 1)) / spv);
-    slides.forEach(sl => {
-      sl.style.flex = `0 0 ${slideWidth}px`;
-    });
-    // ensure currentIndex valid
-    const maxStart = Math.max(0, slides.length - spv);
-    if (currentIndex > maxStart) currentIndex = maxStart;
-    moveTo(currentIndex);
-    buildDots();
-  }
-
-  function moveTo(index) {
-    currentIndex = Math.max(0, Math.min(index, slides.length - spv));
-    const transformX = -slides.slice(0, currentIndex).reduce((acc, s) => acc + s.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 20), 0);
-    // simpler: use slide width * index (since flex basis set)
-    const slideWidth = slides[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(track).gap) || 20);
-    const tx = - (slideWidth * currentIndex);
-    track.style.transform = `translateX(${tx}px)`;
-    updateDots();
-  }
-
-  function prev() { moveTo(currentIndex - spv); resetAutoplay(); }
-  function next() { moveTo(currentIndex + spv); resetAutoplay(); }
-
-  function goToPage(page) {
-    moveTo(page * spv);
-    resetAutoplay();
-  }
-
-  // Autoplay
-  function startAutoplay(){
-    stopAutoplay();
-    autoplayTimer = setInterval(()=> {
-      const maxStart = Math.max(0, slides.length - spv);
-      if (currentIndex >= maxStart) {
-        moveTo(0);
-      } else {
-        moveTo(currentIndex + spv);
-      }
-    }, autoplayDelay);
-  }
-  function stopAutoplay(){ if(autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } }
-  function resetAutoplay(){ stopAutoplay(); startAutoplay(); }
-
-  // Events
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
-
-  // keyboard accessibility
-  viewport.addEventListener('keydown', (e)=> {
-    if (e.key === 'ArrowLeft') prev();
-    if (e.key === 'ArrowRight') next();
-  });
-
-  // pause autoplay on hover/focus
-  viewport.addEventListener('mouseenter', stopAutoplay);
-  viewport.addEventListener('mouseleave', startAutoplay);
-  viewport.addEventListener('focusin', stopAutoplay);
-  viewport.addEventListener('focusout', startAutoplay);
-
-  // window resize
-  let resizeTimer = null;
-  window.addEventListener('resize', ()=> {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(recalc, 120);
-  });
-
-  // init
-  recalc();
-  startAutoplay();
-
-})();
-</script>
-
 </body>
+
 </html>

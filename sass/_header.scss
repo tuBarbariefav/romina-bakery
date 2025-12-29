@@ -4,149 +4,104 @@
 /* ============================================================
    HEADER BASE
 ============================================================ */
+
 .site-header {
+    position: relative;
+    z-index: 1000;
     padding: 15px 0;
+    background: color(fondo);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    background: #fff7f2;
-    position: relative; // Necesario para el panel móvil
-    z-index: 1000; // Evita que el collapse quede detrás
+}
 
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
+/* ============================================================
+   NAVBAR RESET (BOOTSTRAP)
+============================================================ */
 
-        h1 {
-            font-size: 32px;
-            color: $color-titulo;
-            margin: 0;
-        }
+.navbar {
+    padding: 0;
+}
+
+/* ============================================================
+   LOGO / TÍTULO DEL SITIO
+   (SEMÁNTICO, SIN BOOTSTRAP, MISMA TIPOGRAFÍA QUE TÍTULOS)
+============================================================ */
+
+.site-header .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.site-header .site-title {
+    font-family: $font-brand; // Great Vibes
+    font-size: 32px;
+    font-weight: 700;
+    color: color(titulo);
+    margin: 0;
+    line-height: 1;
+}
+
+/* Responsive título */
+@include respond-max(576px) {
+    .site-header .site-title {
+        font-size: 26px;
     }
 }
 
 /* ============================================================
-   BOOTSTRAP NAVBAR CUSTOM RESET
+   BOTÓN HAMBURGUESA (BOOTSTRAP PURO)
 ============================================================ */
-.navbar {
-    padding: 0; // Asegura que tu header no cambie de tamaño
-}
 
-/* Botón hamburguesa */
 .navbar-toggler {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100; // Encima del panel móvil
+    border: none;
+    background: transparent;
+    box-shadow: none;
 }
 
-/* Ícono hamburguesa — líneas doradas */
-.navbar-toggler-icon {
-    width: 28px;
-    height: 3px;
-    background-color: $color-titulo;
-    position: relative;
-    display: block;
-    border-radius: 2px;
-    transition: 0.25s ease-in-out;
-
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: $color-titulo;
-        border-radius: 2px;
-        transition: 0.25s ease-in-out;
-    }
-
-    &::before {
-        top: -8px;
-    }
-
-    &::after {
-        top: 8px;
-    }
-}
-
-/* Animación en X */
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-color: transparent;
-
-    &::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-
-    &::after {
-        top: 0;
-        transform: rotate(-45deg);
-    }
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 /* ============================================================
    LINKS DEL MENÚ
 ============================================================ */
+
 .navbar-nav .nav-link {
-    color: $color-texto;
+    font-family: $font-base; // Raleway
     font-size: 16px;
-    padding: 8px 12px;
+    color: color(texto);
+    padding: 10px 14px;
     transition: color 0.25s ease;
 
     &:hover,
     &.active {
-        color: $color-titulo;
+        color: color(titulo);
     }
 }
 
 /* ============================================================
-   MOBILE MENU — SLIDE FROM RIGHT
+   MENÚ MOBILE (DESPLEGABLE HACIA ABAJO)
 ============================================================ */
-@media (max-width: 991px) {
 
-    /* Usamos position absolute + contenedor relativo (site-header) */
+@include respond-max(991px) {
     .navbar-collapse {
-        position: absolute !important;
-        top: 100%;
-        right: 0;
-        width: 70%;
-        max-width: 320px;
-        background: #fff7f2;
-        padding: 22px;
-        border-radius: 12px 0 0 12px;
-        box-shadow: $shadow-hover;
-        z-index: 1200;
-
-        /* Oculto inicialmente fuera de pantalla */
-        transform: translateX(100%);
-        transition: transform .28s ease-out;
-    }
-
-    /* Cuando está abierto → aparece */
-    .navbar-collapse.show {
-        transform: translateX(0);
+        background: color(fondo);
+        padding: 20px;
+        border-radius: 14px;
+        margin-top: 12px;
     }
 
     .navbar-nav {
-        width: 100%;
-        text-align: right;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 12px 0;
+        text-align: center;
     }
 }
 
 /* ============================================================
-   EVITAR OVERFLOW EN MÓVIL
+   EVITAR OVERFLOW HORIZONTAL
 ============================================================ */
-@media (max-width: 768px) {
+
+@include respond-max(768px) {
 
     html,
     body {
