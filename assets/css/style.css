@@ -265,6 +265,22 @@ article {
     overflow-x: hidden;
   }
 }
+.site-navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================================
+   INDEX: MENÚ A LA DERECHA
+============================================================ */
+.home-navbar .navbar-collapse {
+  margin-left: auto;
+}
+
 /* ============================================================
    HERO PRINCIPAL
 ============================================================ */
@@ -972,4 +988,152 @@ input[type=submit]:hover {
   height: 220px;
   object-fit: cover;
   display: block;
+}
+
+.team-section {
+  padding: 80px 0;
+  background: #ffefdf;
+}
+
+.team-title {
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.team-card {
+  background: white;
+  border-radius: 28px;
+  padding: 35px 30px 40px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.team-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+}
+
+.team-badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffb6b9;
+  color: white;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-family: "Great Vibes", cursive;
+  font-size: 20px;
+}
+
+.team-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-card {
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Mobile */
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-card {
+    max-width: 100%;
+  }
+}
+/* ============================================================
+   TEAM CARDS — SOBRE NOSOTROS
+============================================================ */
+.team-section {
+  padding: 80px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 26px;
+  padding: 60px 30px 40px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.team-badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffb6b9;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-family: "Great Vibes", cursive;
+  font-size: 18px;
+}
+
+.team-photo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-name {
+  font-family: "Great Vibes", cursive;
+  font-size: 26px;
+  color: #a8886a;
+  margin-top: 10px;
+}
+
+.team-role {
+  color: #b08968;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.team-desc {
+  color: #444;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
