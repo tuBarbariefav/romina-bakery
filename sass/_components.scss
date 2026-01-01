@@ -610,3 +610,26 @@ input[type="submit"]:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===========================
+FIX DEFINITIVO SLIDER BLOG
+=========================== */
+
+.slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.slide {
+    flex: 0 0 auto !important;
+    width: auto !important;
+}
+
+.slider-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-track>.slide {
+    max-width: 360px;
+}
