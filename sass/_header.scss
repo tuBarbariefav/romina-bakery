@@ -108,3 +108,20 @@
         overflow-x: hidden;
     }
 }
+
+.site-navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ============================================================
+   INDEX: MENÚ A LA DERECHA
+============================================================ */
+
+.home-navbar .navbar-collapse {
+    margin-left: auto;
+}
