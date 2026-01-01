@@ -170,6 +170,24 @@ article {
   text-decoration: underline !important;
 }
 
+a {
+  color: #ffb6b9;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: #e8a7aa;
+}
+
+.contacto a {
+  color: #a8886a;
+}
+
+.contacto a:hover {
+  color: #ffb6b9;
+}
+
 /* 3) LAYOUT (estructura principal) */
 /* ============================================================
    HEADER BASE

@@ -177,3 +177,21 @@ article {
     color: color(titulo) !important;
     text-decoration: underline !important;
 }
+
+a {
+    color: color(pastel);
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+a:hover {
+    color: color(pastel-hover);
+}
+
+.contacto a {
+    color: color(titulo);
+}
+
+.contacto a:hover {
+    color: color(pastel);
+}

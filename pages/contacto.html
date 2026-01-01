@@ -24,8 +24,9 @@
 <body>
 
   <!-- ================= HEADER ================= -->
- <header class="site-header" role="banner">
-    <nav class="navbar navbar-expand-lg container">
+  <header class="site-header" role="banner">
+    <nav class="navbar navbar-expand-lg site-navbar">
+
 
       <a href="../index.html" class="navbar-brand site-brand" aria-label="Ir al inicio">
         <img src="../assets/img/logo-bakery.png" alt="Romina Bakery" width="64" height="64">
@@ -55,13 +56,15 @@
   <!-- ================= MAIN ================= -->
   <main class="py-5">
 
-    <section class="contacto" aria-labelledby="contacto-title">
+    <section class="contact-section" aria-labelledby="contacto-title">
+
       <div class="container">
 
-        <header class="text-center mb-4">
-          <h1 id="contacto-title">Contacto</h1>
-          <p class="small">¿Querés reservar tu pastel o recibir asesoría personalizada?</p>
-        </header>
+        <div class="section-header text-center mb-4">
+  <h1 id="contacto-title">Contacto</h1>
+  <p class="small">¿Querés reservar tu pastel o recibir asesoría personalizada?</p>
+</div>
+
 
         <div class="row g-5">
 
@@ -112,7 +115,8 @@
                 <label for="callme" class="form-check-label">Solicitar llamada de asesoría</label>
               </div>
 
-              <button type="submit" class="btn btn-pastel w-100 py-2">
+              <button type="submit" class="btn-pastel w-100">
+
                 Enviar solicitud
               </button>
 
@@ -161,6 +165,8 @@
       <div class="container text-center">
         <p>© <time datetime="2025">2025</time> Romina Bakery. Todos los derechos reservados.</p>
       </div>
+          </div>
+
   </footer>
 
   <!-- JS -->
