@@ -1176,3 +1176,32 @@ FIX DEFINITIVO SLIDER BLOG
 .slider-track > .slide {
   max-width: 360px;
 }
+
+/* BLOG INTRO TEXT */
+.blog-intro {
+  max-width: 780px;
+  margin-inline: auto;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #1a1b1f;
+  opacity: 0.85;
+}
+
+/* CONTACT PAGE TEXTS */
+.contact-intro {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #1a1b1f;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.contact-cta {
+  max-width: 640px;
+  margin-inline: auto;
+}
+.contact-cta p {
+  opacity: 0.85;
+}
