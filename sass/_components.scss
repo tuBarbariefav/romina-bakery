@@ -665,3 +665,74 @@ FIX DEFINITIVO SLIDER BLOG
         opacity: .85;
     }
 }
+
+.category-card {
+    text-align: center;
+
+    img {
+        border-radius: 10px;
+    }
+
+    .btn {
+        margin-top: 14px;
+    }
+}
+
+.intro-text,
+.section-text p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.section-text h2 {
+    font-family: $font-brand;
+    color: color(titulo);
+    margin-bottom: 12px;
+}
+
+/* =========================
+   HERO COMPACT CENTRADO
+========================= */
+
+.hero-compact {
+    text-align: center;
+    padding: 90px 0 70px;
+}
+
+.hero-compact-inner {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.hero-compact h1 {
+    font-family: $font-brand;
+    color: color(titulo);
+    font-size: 44px;
+    margin-bottom: 10px;
+}
+
+.hc-subtitle {
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto 22px;
+    line-height: 1.6;
+}
+
+/* Decoración suave */
+.hc-deco {
+    width: 90px;
+    height: 4px;
+    background: color(pastel);
+    border-radius: 10px;
+    margin: 18px auto;
+}
+
+.blog-intro {
+    max-width: 760px;
+    margin: 0 auto 36px auto;
+    text-align: center;
+    font-size: 15px; // mismo tamaño que tu texto base
+    line-height: 1.6;
+    color: color(texto);
+}
