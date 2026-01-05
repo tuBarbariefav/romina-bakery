@@ -736,3 +736,41 @@ FIX DEFINITIVO SLIDER BLOG
     line-height: 1.6;
     color: color(texto);
 }
+
+/* ===== BLOG SLIDER FIX ===== */
+
+.slider-viewport {
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    gap: 2rem;
+}
+
+.slide {
+    flex: 0 0 320px; // ancho fijo profesional
+}
+
+.slide .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen contenida y recortada */
+.slide picture,
+.slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+}
+
+/* Body ocupa el resto */
+.slide .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

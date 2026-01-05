@@ -17,3 +17,78 @@
 
 /* 4) COMPONENTES (cards, botones, etc.) */
 @use 'components';
+
+/* ================================
+   RESPONSIVE GLOBAL PATCH
+================================ */
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+.container {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+section {
+   overflow-x: hidden;
+}
+
+.row {
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.card,
+.product-card-mini,
+.team-card-mini,
+.categoria-card-mini {
+   width: 100%;
+   max-width: 360px;
+   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+
+   h1 {
+      font-size: 30px;
+   }
+
+   h2 {
+      font-size: 24px;
+   }
+
+   .navbar-nav {
+      text-align: center;
+   }
+
+   .slider-viewport {
+      padding: 0 1rem;
+   }
+
+   .slide {
+      min-width: 90%;
+   }
+
+   .team-card-mini,
+   .product-card-mini,
+   .categoria-card-mini {
+      max-width: 95%;
+   }
+
+   footer {
+      text-align: center;
+   }
+}
+
+.hero-compact-inner,
+.text-center,
+.section-title {
+   text-align: center;
+}
+
+.slider-wrap {
+   padding: 0 1rem;
+}
